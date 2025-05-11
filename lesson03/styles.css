@@ -1,0 +1,6 @@
+/* external css ით bg-color და ტექსიტს ქოლორი შეცვალოთ body -tag
+ */
+body {  
+    color: crimson;
+    background-color: black;
+}
