@@ -1,9 +1,15 @@
 man = {
     "name" : "Giorgi",
-    "age" : 25
+    "age" : 25,
+    "pet" : "dog"
 }
 
 man.update({"age": 26})
 print(man)
 
-# washla age key-s
+man.pop("name")
+print(man)
+del man["age"]
+print(man)
+man.popitem()
+print(man)

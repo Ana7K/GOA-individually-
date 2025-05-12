@@ -1,0 +1,11 @@
+body {
+    color: darkgoldenrod;
+    text-align: center;
+}
+h1, h2 {   
+    color: black;
+}
+section > form{
+    color: rgb(0, 0, 0);
+    background-color: rgb(139, 183, 168);
+}
