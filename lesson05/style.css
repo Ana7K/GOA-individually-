@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* .box {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+}
+.bg-red {
+    background-color: red;
+} */
+
+body{
+    font-family: sans-serif;
+}
+
+.margin-center{
+    margin: 0 auto;
+}
+.main-img-container{
+    margin: 20px auto;
+}
+.img-container{
+    width: 400px;
+}
+.img-container img{
+    width: 100%;
+}
+
+.text-container h1{
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 10px;
+    line-height: 15px;
+    text-decoration: underline;
+    text-shadow: 1px 1px 0 red;
+    text-align: center;
+}
