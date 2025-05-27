@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141414;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@font-face {
+    font-family: sans-serif;
+    src: url(social-links-profile-main/assets/fonts/Inter-VariableFont_slnt,wght.ttf);
+}
+
+h1{
+    font-size: larger;
+}
+
+.profile {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 310px;
+    height: 500px;
+}
+
+.profile img {
+    margin: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.location {
+    color: #c4f82a;
+    font-weight: bold;
+    font-size: small;
+    margin: 10px;
+}
+
+.bio {
+    font-size: small;
+    color: #ccc;
+    margin: 20px;
+}
+
+.links a {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    color: white;
+    font-size: small;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+}

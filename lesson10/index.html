@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="heading">HI</h1>
+    <div onclick="bgchange()" id="div_box" class="box">
+      <h2>welcome</h2>
+    </div>
+    <script>
+      console.log("hello world");
+      let r = 2;
+      r = 4;
+      const area = Math.PI * r * r;
+      console.log("area of circle: ", area);
+
+      const heading = document.getElementById("heading");
+      heading.style.color = "blue";
+
+      const div_box = document.getElementById("div_box");
+      div_box.style.color = "red";
+      function bgchange() {
+        div_box.style.backgroundColor = "black";
+        document.body.style.backgroundColor = "green";
+      }
+    </script>
+  </body>
+</html>
