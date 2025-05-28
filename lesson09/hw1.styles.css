@@ -1,10 +1,15 @@
+@font-face {
+    font-family: "inter";
+    src: url(./social-links-profile-main/assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
+    font-family: "inter";
+    font-size: 14px;
     background-color: #141414;
     color: white;
     display: flex;
@@ -12,53 +17,51 @@ body {
     align-items: center;
     height: 100vh;
 }
-
-@font-face {
-    font-family: sans-serif;
-    src: url(social-links-profile-main/assets/fonts/Inter-VariableFont_slnt,wght.ttf);
+.margin-center{
+    margin: auto;
+    max-width: 1200px;
 }
-
 h1{
     font-size: larger;
 }
-
 .profile {
-    background-color: #1f1f1f;
+    background-color: var(--grey-800);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    width: 310px;
-    height: 500px;
 }
-
 .profile img {
-    margin: 20px;
-    width: 80px;
-    height: 80px;
+    width: 30%;
     border-radius: 50%;
+    margin: 20px;
 }
-
 .location {
-    color: #c4f82a;
+    color: var(--green);
     font-weight: bold;
-    font-size: small;
+    font-size: smaller;
     margin: 10px;
 }
-
 .bio {
     font-size: small;
-    color: #ccc;
+    color: var(--white);
     margin: 20px;
 }
-
 .links a {
     display: flex;
     justify-content: center;
-    background-color: #333;
+    background-color: var(--grey-700);
     color: white;
-    font-size: small;
+    font-size: smaller;
+    font-weight: bold;
     text-decoration: none;
-    padding: 10px;
-    margin: 10px;
+    padding: 12px;
+    margin: 15px;
     border-radius: 8px;
+}
+:root{
+--green: hsl(75, 94%, 57%);
+--white: hsl(0, 0%, 100%);
+--grey-700: hsl(0, 0%, 20%);
+--grey-800: hsl(0, 0%, 12%);
+--grey-900: hsl(0, 0%, 8%);
 }
