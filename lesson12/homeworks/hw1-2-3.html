@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      button {
+        color: blue;
+        background-color: rgb(189, 189, 189);
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 10px;
+        padding-inline: 20px;
+        padding-block: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="button1">click</button>
+    <button id="button2">click</button>
+    <button id="button3">click</button>
+
+    <script>
+      const element = document.querySelectorAll("button");
+
+      for (let i = 0; i < 3; i++) {
+        element[i].addEventListener("click", function () {
+          element[i].textContent = "Clicked!";
+        });
+      }
+
+      console.log("counting buttons: ", element.length)
+    </script>
+  </body>
+</html>

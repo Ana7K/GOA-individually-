@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      button {
+        background: #1b1b1b;
+        color: #bfbfbf;
+        border: 1px solid #6f6f6f;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      p {
+        background: #000;
+        color: white;
+      }
+      div {
+        background: red;
+      }
+      /* FOR ONLY JS */
+      .remove-element {
+        opacity: 0;
+        transition: all 300ms ease;
+      }
+      button {
+        opacity: 1;
+        transition: all 300ms ease;
+      }
+    </style>
+  </head>
+  <body>
+    <button>second click</button>
+    <button id="btn" onclick="handleRemoveElement()">click</button>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <script>
+      const btn = document.getElementById("btn");
+      const p = document.querySelector("p");
+      console.log(btn);
+
+      let isAdd = true;
+      function handleRemoveElement() {
+        //css way-1
+        // btn.style.display = "none";
+        console.log("double click");
+        if (isAdd) {
+          btn.classList.add("remove-element");
+          isAdd = false;
+        } else if (!isAdd) {
+          btn.classList.remove("remove-element");
+          isAdd = true;
+        }
+        // //way-1 js
+        // console.log(isAdd);
+
+        // btn.classList.toggle("remove-element");
+      }
+
+      //wat to make array
+      const array = Array(1, 1, 1, 1);
+      console.log(array);
+      const obj = {
+        name: "davit",
+        age: 21,
+      };
+      console.log(Object.keys(obj));
+      console.log(Object.values(obj));
+
+      function Car(model, year) {
+        this.model = model;
+        this.year = year;
+      }
+      const newCar = new Car("Mercedes", 2015);
+      const newCar2 = new Car("Bmw", 2013);
+      console.log(newCar);
+      console.log(newCar2);
+      console.log(typeof []);
+      console.log(typeof {});
+
+      console.log("------------------------");
+      // ecmascript5-6-7
+      // es6
+      function funcName() {}
+      // arrow functions
+      const myArrowFunc = () => "lomi";
+      console.log(myArrowFunc()); // "lomi"
+      const myArrowFunc1 = () => "lombardi";
+      console.log(myArrowFunc1());
+
+      const myArrowFunc2 = (name, surname, age) => {
+        return name;
+      };
+      console.log(myArrowFunc2("davit"));
+
+      btn.addEventListener("click", () => {});
+
+      console.log("------------------------");
+
+      //2) Create arrow function which log "hello world"
+      const sayHello = () => {
+        console.log("hello world");
+      };
+      sayHello();
+      const button = document.querySelector("button");
+      // 3) Create arrow function which changes bg color of the button
+      const changeBgColor = () => {
+        button.style.backgroundColor = "blue";
+      };
+      button.addEventListener("click", changeBgColor);
+      console.log(button);
+
+      console.log("------------------------");
+
+      console.log(myArrowFunc2("davit"));
+      const arrayLomi = ["lomi", 1, 2, 34, 5, 6, 7];
+      console.log(
+        arrayLomi.forEach((item, index) => {
+          const name = "lomi";
+          console.log(item);
+        })
+      );
+    </script>
+  </body>
+</html>

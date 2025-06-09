@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      padding: 10px;
+      color: black;
+      background-color: white;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+    .dark-mode button {
+      background-color: black;
+      color: white;
+      border-width: 2px;
+      border-color: blue;
+      border-radius: 5px;
+    }
+    button {
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+  <body>
+    <p>click here for dark mode</p>
+    <br />
+    <button onclick="myFunction()">dark mode</button>
+
+    <script>
+      function myFunction() {
+        document.body.classList.toggle("dark-mode");
+      }
+    </script>
+  </body>
+</html>

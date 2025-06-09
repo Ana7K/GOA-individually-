@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("----------hw1----------");
+      const array = ["mango", "lomi", "vefxvi", "avocado"];
+      array.forEach((item, index) => {
+        console.log("index ", index, ", thing ", item);
+      });
+
+      console.log("----------hw2----------");
+
+      const info = (name, surname, age) => {
+        console.log("I am", name, surname, "and my age is:", age);
+      };
+      console.log(info("Ana", "Kitesashvili", 21));
+
+      console.log("----------hw3----------");
+
+      const obj = {
+        name: "Ana",
+        surname: "Kitesashvili",
+        age: 21,
+        pet: false,
+      };
+      console.log(Object.keys(obj));
+      console.log(Object.values(obj));
+
+      console.log("----------hw4----------");
+
+      function Car(brand, year) {
+        this.brand = brand;
+        this.year = year;
+      }
+
+      const car1 = new Car("mercedes", 2020);
+      const car2 = new Car("bmw", 2022);
+      const car3 = new Car("tesla", 2023);
+
+      console.log("car1", car1, "car2 ", car2, "car3 ", car3);
+    </script>
+  </body>
+</html>

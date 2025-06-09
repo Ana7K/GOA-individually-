@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: slategray;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding-inline: 20px;
+        padding-block: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 150ms ease;
+      }
+      button:hover {
+        background-color: rgb(97, 137, 177);
+        border: 2px solid black;
+      }
+      /* while clicking */
+      button:focus {
+        border: 2px solid rgb(200, 168, 168);
+        color: rgb(200, 168, 168);
+      }
+      /* click and not release */
+      button:active {
+        border: 2px solid rgb(69, 52, 52);
+        color: rgb(69, 52, 52);
+      }
+      a {
+        text-decoration: none;
+      }
+      a:link {
+        color: red;
+      }
+      a:visited {
+        color: blue;
+      }
+      /* classwork */
+      #button:hover {
+        background-color: rgb(26, 126, 225);
+        border: 2px solid darkblue;
+      }
+      .button-class:focus {
+        border: 2px solid black;
+        color: rgb(205, 153, 153);
+      }
+      .button-class:active {
+        border: 2px solid rgb(134, 175, 126);
+        color: rgb(157, 230, 156);
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">click</button>
+    <button class="btn-class">click</button>
+    <button class="btn-class" id="btn">click</button>
+
+    <a href="">click</a>
+
+    <br /><br />
+    <button id="button">click</button>
+    <button class="button-class">click</button>
+    <button class="button-class" id="buttonn">click</button>
+
+    <script>
+      const reachBodyElementWay1 = document.getElementById("btn");
+      const reachBodyElementWay2 = document.getElementsByClassName("btn-class");
+      // const reachBodyElementWay3 = document.querySelector();
+      // const reachBodyElementWay4 = document.querySelectorAll();
+      console.log("way1:", reachBodyElementWay1);
+      console.log("way2:", reachBodyElementWay2);
+
+      //   classwork
+      const reachBodyElementWay01 = document.getElementById("button");
+      const reachBodyElementWay02 =
+        document.getElementsByClassName("button-class");
+      const reachBodyElementWay03 = document.querySelector("#buttonn");
+      const reachBodyElementWay04 = document.querySelectorAll(".button-class");
+
+      console.log("way1:", reachBodyElementWay01);
+      console.log("way2:", reachBodyElementWay02);
+      console.log("way3:", reachBodyElementWay03);
+      console.log("way4:", reachBodyElementWay04);
+
+      const arrayOfButtons = document.getElementsByClassName("button-class");
+      function bgChange(el) {
+        el.style.backgroundColor = "purple";
+      }
+      for (let i = 0; i < 3; i++) {
+        bgChange(arrayOfButtons[i]);
+        // arrayOfButtons[i].style.backgroundColor="red";
+        console.log(i);
+      }
+
+      let i = 0;
+      while(i<10){
+        console.log(i);
+        i++;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #c7dcfc;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        flex-direction: column;
+        /* align-items: center; */
+        height: 100vh;
+      }
+      .flow-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        overflow-y: hidden;
+
+        height: 500px;
+        width: 800px;
+        background-color: #f7f8c0;
+      }
+
+      /* სპანჯბობის კბილები */
+      .child {
+        margin-top: -30px;
+        height: 100px;
+        width: 100px;
+        background-color: #c0f8d0;
+      }
+      /* utility */
+      .border {
+        border: 5px solid black;
+        border-radius: 20px;
+      }
+
+      /* overflow scroll variant y*/
+      .flow-container-2 {
+        height: 500px;
+        width: 800px;
+        background-color: #f8c0c0;
+        padding: 20px;
+
+        overflow-y: scroll;
+      }
+      .child-1 {
+        margin-top: 10px;
+        height: 100%;
+        width: 500px;
+        background-color: #c0f8d0;
+      }
+      .child-1 {
+        margin-top: 10px;
+        height: 100%;
+        width: 500px;
+        background-color: #c0f8d0;
+      }
+      /* variant x */
+      .flow-container-3 {
+        height: 500px;
+        width: 800px;
+        display: flex;
+        gap: 10px;
+        background-color: #f8c0c0;
+        padding: 20px;
+
+        overflow-x: auto;
+      }
+      .flex {
+        gap: 10px;
+        display: flex;
+      }
+      .flow-container-4 {
+        height: 500px;
+        width: 800px;
+        background-color: #8158d9;
+        display: flex;
+        gap: 10px;
+        overflow-x: scroll;
+        align-items: center;
+      }
+      .images-flex {
+        gap: 10px;
+        display: flex;
+      }
+      .child-3 {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flow-container border">
+      <div class="child border"></div>
+      <div class="child border"></div>
+    </div>
+    <h2>Overflow y</h2>
+    <!-- variant y -->
+    <div class="flow-container-2 border">
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+      <div class="child-1 border"></div>
+    </div>
+    <!-- variant x -->
+    <h2>Overflow x</h2>
+    <div class="flow-container-3 border">
+      <div class="flex">
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+        <div class="child-1 border"></div>
+      </div>
+    </div>
+    <div class="flow-container-4 border">
+      <div class="images-flex">
+        <div class="child-2 border"><img src="./images/louis.jpg" alt="armstrong"></div>
+        <div class="child-2 border"><img src="./images/louis.jpg" alt="armstrong"></div>
+        <div class="child-2 border"><img src="./images/louis.jpg" alt="armstrong"></div>
+        <div class="child-2 border"><img src="./images/louis.jpg" alt="armstrong"></div>
+        <div class="child-2 border"><img src="./images/louis.jpg" alt="armstrong"></div>
+        <div class="child-2 border"><img src="./images/louis.jpg" alt="armstrong"></div>
+        <div class="child-2 border"><img src="./images/louis.jpg" alt="armstrong"></div>
+        <div class="child-2 border"><img src="./images/louis.jpg" alt="armstrong"></div>
+        <div class="child-2 border"><img src="./images/louis.jpg" alt="armstrong"></div>
+        <div class="child-2 border"><img src="./images/louis.jpg" alt="armstrong"></div>
+      </div>
+    </div>
+  </body>
+</html>
