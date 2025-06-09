@@ -1,0 +1,23 @@
+body {
+  background: var(--background);
+}
+button {
+  color: var(--text);
+  background-color: var(--);
+}
+
+:root {
+  --background: #ffffff;
+  --text: #000000;
+}
+
+
+.red {
+  --background: #c11212;
+  --text: #d57e7e;
+  --btn: #411515;
+}
+.dark {
+  --background: #000000;
+  --text: #ffffff;
+}

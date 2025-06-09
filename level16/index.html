@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="handleBgChange()">Dark mode</button>
+    <button onclick="handleRedMode()">Red mode</button>
+    <script>
+      const handleBgChange = () => {
+        console.log("Clicked!");
+        document.body.classList.toggle("dark");
+      };
+      const handleRedMode = () => {
+        document.body.classList.remove("dark");
+        document.body.classList.toggle("red");
+      };
+      console.log("-------------------------------");
+      const array = ["davit", "grdzelo", "davita", "ana"];
+      const storeArray = array.forEach((item, index) => {
+        const res = `${item} lomi ${index * 4}`;
+        return res;
+      });
+
+      const storeArrayMap = array.map((item, index) => {
+        const res = `${item} lomi ${index * 4000}`;
+        return res;
+      });
+      console.log(storeArrayMap);
+
+      const storeArrayFilter = array.filter((item, index) => {
+        if (item.includes("davit")) {
+          return item;
+        }
+      });
+      console.log(storeArrayFilter);
+      const arrayNumber = [1, 2, 3, 4];
+      const storeArrayReduce = arrayNumber.reduce((current, accumulator) => {
+        console.log(current + accumulator);
+        return current + accumulator;
+      });
+      console.log(storeArrayReduce);
+
+      console.log("------------1------------");
+
+      const myArray = ["ana", "bana", "mamam", "shesha", "mogvitana"];
+      const arr = myArray.forEach((item, index) => {
+        console.log(`${item} ${index}`);
+      });
+
+      console.log("------------2------------");
+
+      const arrFilter = myArray.filter((item, index) => {
+        if (item.includes("shesha")) {
+          return item;
+        }
+      });
+      console.log(arrFilter);
+
+      console.log("------------3------------");
+
+      const changedArr = myArray.forEach((item) => {
+        console.log(`${item} "vefxvi"`);
+      });
+
+      console.log("------------4------------");
+
+      const numberArray = [1, 2, 3, 4];
+
+      const numberArr = arrayNumber.reduce((current, accumulator) => {
+        console.log(current * accumulator);
+        return current * accumulator;
+      });
+
+      console.log("------------------------");
+      object = {
+        name: "ana",
+        pet: false,
+      };
+      // გამოიყენება იმისათვის რომ გადაუაროს object
+      for (const key in object) {
+        if (Object.prototype.hasOwnProperty.call(object, key)) {
+          const element = object[key];
+          console.log(element);
+        }
+      }
+      // გამოიყენება იმისათვის რომ გადაუაროს array
+      const array1 = ["davit", "lomi"];
+      for (const element of array1) {
+        console.log(element);
+      }
+
+      console.log("--------------------------------------");
+      const destructObj = {
+        name: "ana",
+        car: false,
+      };
+      const arr11111 = ["davit", "ana"];
+      const { name, car } = destructObj;
+      const [name1, name2] = arr11111;
+      console.log(name1, name2);
+      console.log(name, car);
+
+      console.log("-------------------5-------------------");
+
+      const arr2 = [1, 3, 5, 7];
+      let arrayOqro = [];
+      for (const element of arr2) {
+        arrayOqro.push(element);
+      }
+      const [el1, el2, el3, el4] = arrayOqro;
+      console.log(el1, el2, el3, el4);
+    </script>
+  </body>
+</html>
