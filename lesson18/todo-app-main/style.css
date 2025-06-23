@@ -79,7 +79,6 @@ body {
   background-color: var(--Very-Dark-Desaturated-Blue);
   box-shadow: 0 5px 10px rgba(0,0,0,0.3);
 }
-
 button{
   background: none;
   border: none;
@@ -93,6 +92,7 @@ button{
   align-content: center;
   padding-top: 20px;
 }
+
 input[type="checkbox"]{
   background-image: url(./images/icon-check.svg);
   width: 20px;
@@ -150,7 +150,7 @@ input[type="checkbox"]:checked + .todo-text {
 }
 
 .drag-drop, .attribution{
-  position: fixed;
+  /* position: fixed; */
   bottom:5px;
   left: 0;
   width: 100%;

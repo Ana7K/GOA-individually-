@@ -47,7 +47,8 @@
       }
     }
     class Car extends Human {
-      constructor(brand, year) {
+      constructor(name, brand, year) {
+        super(name);
         this.brand = brand;
         this.year = year;
       }
@@ -55,8 +56,8 @@
         return `This car is driven by ${this.name}`;
       }
     }
-    // const myCar = new Car("Ana", "Toyota", 2022);
-    // console.log(myCar.driven());
+    const myCar = new Car("Ana", "Toyota", 2022);
+    console.log(myCar.driven());
 
     console.log("----------------------");
 
@@ -68,8 +69,13 @@
       get nameFunc() {
         return `user name: ${this.name}`;
       }
+      set myFunc(name){
+        const result = name.split(" ")
+        this.name = result[0]
+      }
     }
     const person = new human("Ana");
     console.log(person.nameFunc);
+    console.log(person.name);
   </script>
 </html>
