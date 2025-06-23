@@ -1,0 +1,114 @@
+/*root*/
+:root {
+--red: hsl(14, 86%, 42%);
+--green: hsl(159, 69%, 38%);
+--rose-50: hsl(20, 50%, 98%);
+--rose-100: hsl(13, 31%, 94%);
+--rose-300: hsl(14, 25%, 72%);
+--rose-400: hsl(7, 20%, 60%);
+--rose-500: hsl(12, 20%, 44%);
+--rose-900: hsl(14, 65%, 9%);
+}
+.content{
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+body{
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: var(--rose-100);
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+h1{
+    text-align: left;
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--rose-900);
+    padding: 150px 0 50px 0;
+}
+.skeleton-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.img-skeleton img {
+    /* width: 500px;
+    height: 500px; */
+    border-radius: 20px;
+}
+.btn-skeleton {
+    background-color: var(--rose-50);
+    border: 1px solid var(--rose-300);
+    font-size: 16px;
+    width: 200px;
+    height: 50px;
+    border-radius: 40px;
+    margin: 0 auto;
+    margin-top: -25px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.btn-skeleton div {
+    width: 25px;
+    height: 25px;
+    background-color: var();
+}
+.item-img-button-container {
+    /* width: 500px; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* typography */
+span {
+    display: block;
+    width: 200px;
+    height: 10px;
+    color: var(--rose-400);
+}
+
+span:last-child {
+    display: block;
+    width: 50px;
+    height: 15px;
+}
+
+h2 {
+    width: 300px;
+    height: 10px;
+}
+
+button p, .product-name{
+    color: var(--rose-900);
+    font-weight: 600;
+}
+h2, button img, .price{
+    color: var(--red);
+}
+
+.cart-container{
+    background-color: var(--rose-50);
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+}
+.cart-empty {
+    text-align: center;
+    color: var(--rose-400);
+}
+.cart-empty img {
+    width: 200px;
+    height: 250px;
+}
