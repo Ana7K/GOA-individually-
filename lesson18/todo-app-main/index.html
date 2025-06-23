@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Todo app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="todo-app">
+      <header class="header">
+        <h1>TODO</h1>
+        <button onclick="myFunction()" id="dark-mode">
+          <img src="./images/icon-moon.svg" alt="dark-mode" />
+        </button>
+      </header>
+
+      <section class="input-section">
+        <input type="text" id="new-todo" placeholder="Create a new todo..." />
+      </section>
+
+      <ul id="todo-list" class="todo-list">
+        <!-- Todo items here -->
+        <li>
+          <input type="checkbox" />
+          <span class="todo-text">Complete online JavaScript course</span>
+        </li>
+      </ul>
+
+      <section class="todo-completion">
+        <p >0 items left</p>
+        <div class="filters">
+          <button class="filter active">All</button>
+          <button class="filter">Active</button>
+          <button class="filter">Completed</button>
+        </div>
+        <button id="clear-completed">Clear Completed</button>
+      </section>
+      <footer>
+        <p class="drag-drop">Drag and drop to reorder list</p>
+      </footer>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+
+  <script>
+    function myFunction() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    let arrayTodo = [];
+    const input = document.getElementById("new-todo");
+    const ul = document.getElementById("todo-list");
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+
+        const value = input.value;
+
+        arrayTodo.push(value);
+
+        const li = document.createElement("li");
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+
+        const span = document.createElement("span");
+        span.className = "todo-text";
+        span.textContent = value;
+
+        li.appendChild(checkbox);
+        li.appendChild(span);
+
+        ul.appendChild(li);
+        input.value = ""; // clear input after adding
+      }
+    });
+
+    const clearBtn = document.getElementById("clear-completed");
+
+    clearBtn.addEventListener("click", () => {
+      const todoItems = ul.querySelectorAll("li");
+      todoItems.forEach((li) => {
+        const checkbox = li.querySelector('input[type="checkbox"]');
+        if (checkbox && checkbox.checked) {
+          ul.removeChild(li);
+        }
+      });
+    });
+  </script>
+</html>

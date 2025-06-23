@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /*js styles
+              👇        */
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: slategray;
+      }
+      .box-bg {
+        background-color: yellowgreen;
+      }
+
+      .boxi {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .colors {
+        background-color: purple;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter task for your to-do list"
+      />
+      <button>Add</button>
+    </form>
+    <ul id="todo-list"></ul>
+
+    <script>
+      let arrayTodo = [];
+      const input = document.getElementById("taskInput");
+      const btn = document.querySelector("button");
+      const ul = document.getElementById("todo-list");
+      input.onchange = (event) => {
+        value = event.target.value;
+      };
+      btn.onclick = (e) => {
+        e.preventDefault();
+        console.log(arrayTodo);
+        const li = document.createElement("li");
+        li.textContent = value;
+        ul.appendChild(li);
+        li.onclick = () => {
+          console.log("lomi");
+          li.remove();
+        };
+      };
+
+      // REST PARAMETER
+      const myFunc = (...lomi) => {
+        return lomi;
+      };
+      console.log(myFunc("lomi", "LOMI1", "LOMI2", "LOMI3"));
+
+      const array1 = [1, 2, 3, 4, 5, 6];
+      const array2 = [7, 8, 9, 10, 11, 12];
+
+      //destructor
+      const [el1, el2] = array1;
+
+      //SPREAD OPERATOR
+      console.log([...array1, ...array2]);
+      console.log([...array1, ...array2]);
+
+      //   console.log([obj1, obj2]);
+
+      /////////////////////////////////////////////
+      //   classwork1
+      const MyFunc = (...mgeli) => {
+        return mgeli;
+      };
+      console.log(MyFunc("lomi", "mgeli", "vefxvi", "tura"));
+
+      const arr1 = [1, 2, 3, 4, 5];
+      const arr2 = [6, 7, 8, 9, 10];
+
+      console.log([...arr1, ...arr2]);
+
+      /////////////////////////////////////////////
+      //   classwork2
+      class Human {
+        constructor(name, year) {
+          this.name = name;
+          this.year = year;
+        }
+        get nameFunc() {
+          return `user name: ${this.name}`;
+        }
+        age() {
+          const date = new Date().getFullYear() - this.year;
+          return date;
+        }
+      }
+      class Car extends Human {
+        popcorns() {
+          return true;
+        }
+      }
+      const humn1 = new Human("davita", 2004);
+      console.log(humn1);
+      console.log(humn1.age());
+      console.log(humn1.nameFunc);
+
+      console.log("---------------------------------------");
+      const car1 = new Car("gtr 34", 2016);
+      console.log(car1.nameFunc);
+      console.log(car1.popcorns());
+
+      /////////////////////////////////////////////
+      //   classwork3
+      class Rectangle {
+        constructor(width, height) {
+          this.width = width;
+          this.height = height;
+        }
+        area() {
+          const area = this.width * this.height;
+          return area;
+        }
+        perimeter() {
+          const perimeter = 2 * (this.width + this.height);
+          return perimeter;
+        }
+      }
+      const rec = new Rectangle(3, 4);
+      console.log(rec);
+      console.log(rec.area());
+      console.log(rec.perimeter());
+    </script>
+  </body>
+</html>

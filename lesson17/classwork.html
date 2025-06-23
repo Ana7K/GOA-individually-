@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css" />
+    <title>Document</title>
+    <style>
+      .loading {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 10px solid blue;
+        border-bottom: 10px solid transparent;
+        animation-name: loading;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      @keyframes loading {
+        0%{
+            transform: rotate(0deg);
+        }
+        50%{
+            transform: rotate(180deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loading"></div>
+  </body>
+</html>

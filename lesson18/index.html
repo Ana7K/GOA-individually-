@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /*js styles
+              👇        */
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: slategray;
+      }
+      .box-bg {
+        background-color: yellowgreen;
+      }
+
+      .boxi {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .colors {
+        background-color: purple;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter task for your to-do list"
+      />
+      <button>Add</button>
+    </form>
+    <ul id="todo-list"></ul>
+
+    <script>
+      //   const div = document.createElement("div"); // შევქმენი ხელოვნურად div
+      //   const div1 = document.createElement("div"); // შევქმენი ხელოვნურად div
+      //   div1.textContent = "ნამი ველს!";
+      //   div1.classList.add("box", "box-bg");
+
+      //   div.textContent = "ლომი"; // contnet-ს ვუმატებთ ტექსტს
+      //   div.classList.add("box"); // div ვუწერთ ხელოვნურად class
+      //   document.body.append(div, div1); // div - ვამატებთ body --tag-ში
+
+      //   // const colors = ["red", "blue", "yellow", "grey", "green"];
+      //   for (let i = 0; i < 5; i++) {
+      //     const boxi = document.createElement("div");
+      //     // boxi.style.backgroundColor = colors[i];
+      //     boxi.classList.add("boxi", "colors");
+      //     boxi.textContent = `boxi ${i + 1}`;
+      //     document.body.appendChild(boxi);
+      //   }
+
+      let arrayTodo = [];
+      const input = document.getElementById("taskInput");
+      const btn = document.querySelector("button");
+      const ul = document.getElementById("todo-list");
+      input.onchange = (event) => {
+        value = event.target.value;
+      };
+      btn.onclick = (e) => {
+        e.preventDefault();
+        console.log(arrayTodo);
+        const li = document.createElement("li");
+        li.textContent = value;
+        ul.appendChild(li);
+      };
+
+      /*
+        // FORM 💀
+        let value = "";
+        let arrayTodo = [];
+        const body = document.body;
+        const input = document.getElementById("n1");
+        const btn = document.querySelector("button");
+
+        //on change
+        input.onchange = (event) => {
+          value = event.target.value;
+          console.log(arrayTodo);
+        };
+        input.value = value;
+
+        // button section
+        btn.onclick = (e) => {
+          const value = input.value;
+          e.preventDefault(); // function რომელიც მოვლენის / event -ის დროს არ გადატვირთოს საიტი
+          arrayTodo.push(value);
+
+          // add one element
+          const div = document.createElement("div");
+          div.textContent = value;
+          body.append(div);
+                  // FORM :skull:
+        let value = "";
+        let arrayTodo = [];
+        const body = document.body;
+        const input = document.getElementById("n1");
+        const btn = document.querySelector("button");
+        const todoElements = document.getElementById("added-element");
+
+        //on change 
+        input.onchange = (event) => {
+            value = event.target.value;
+            console.log(arrayTodo)
+        }
+        input.value = value;
+
+        // button section
+        btn.onclick = (e) => {
+            const value = input.value;
+            e.preventDefault(); // function რომელიც მოვლენის / event -ის დროს არ გადატვირთოს საიტი
+            arrayTodo.push(value);
+
+            // rest todo elemnts 
+            todoElements.innerHTML = null;
+
+
+            arrayTodo.forEach(item => {
+                // add one elemen
+                const div = document.createElement("div");
+                div.textContent = item;
+                todoElements.appendChild(div)
+            })
+
+        }
+        // reach all array element
+        const lomi = document.querySelectorAll("#added-element div")
+        console.log(lomi)
+
+        lomi.forEach((div, index) => {
+            div.onclick = () => {
+                console.log(index)
+            }
+        })
+
+
+
+
+
+        // map, fliiter, reduce, foreach, for in / of
+        // map
+
+        const array = [1, 2, 3, 4, 5, 6, 7, 8, "lomi"]
+        const mappedArray = array.map((item, index) => {
+            return item + " vefxvi"
+        });
+        const fillterArray = array.filter((item, index) => {
+            if (item > 2) {
+                return item
+            } else {
+                // console.log(`${item} არ არის 2 ზე მეტი`)
+            }
+        });
+
+        // console.table(fillterArray)
+        };
+        */
+    </script>
+  </body>
+</html>

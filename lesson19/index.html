@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /*root*/
+      :root {
+        --skeleton-color: rgb(243, 243, 243);
+        --skeleton-color-light: rgb(231, 231, 231);
+      }
+      /* original problem */
+      .container {
+        max-width: 1600px;
+        margin: 0 auto;
+      }
+      body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .skeleton-item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .img-skeleton {
+        width: 500px;
+        height: 500px;
+        background-color: var(--skeleton-color);
+        border-radius: 20px;
+      }
+
+      .btn-skeleton {
+        background-color: var(--skeleton-color);
+        width: 200px;
+        height: 50px;
+        border: 1px solid gray;
+        border-radius: 20px;
+        margin: 0 auto;
+        margin-top: -25px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn-skeleton div {
+        width: 25px;
+        height: 25px;
+        background-color: var(--skeleton-color-light);
+      }
+
+      .btn-skeleton p {
+        width: 100px;
+        height: 25px;
+        background-color: var(--skeleton-color-light);
+      }
+      .item-img-button-container {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* typograppy */
+      span {
+        display: block;
+        width: 20px;
+        height: 10px;
+        background-color: var(--skeleton-color-light);
+      }
+
+      span:last-child {
+        display: block;
+        width: 50px;
+        height: 15px;
+        background-color: var(--skeleton-color-light);
+      }
+
+      h2 {
+        width: 80px;
+        height: 20px;
+        background-color: var(--skeleton-color-light);
+      }
+    </style>
+  </head>
+
+  <body class="container">
+    <!-- one element -->
+    <div class="skeleton-item">
+      <!-- button and img -->
+      <div class="item-img-button-container">
+        <div class="img-skeleton"></div>
+        <button class="btn-skeleton">
+          <!-- icon of button -->
+          <div></div>
+          <!-- text of button -->
+          <p></p>
+        </button>
+      </div>
+      <!-- small title -->
+      <span></span>
+      <!-- large title -->
+      <h2></h2>
+      <!-- medium title -->
+      <span></span>
+    </div>
+
+    <!-- rest / დარჩენილი😁  of elmenets... -->
+    <!-- .... -->
+  </body>
+</html>

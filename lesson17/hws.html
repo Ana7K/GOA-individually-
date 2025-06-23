@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 150px;
+        height: 150px;
+        animation: colorChange 3s infinite;
+        transition: all 0.5s ease;
+      }
+      @keyframes colorChange {
+        0% {
+          background-color: red;
+          opacity: 1;
+        }
+        25% {
+          background-color: orange;
+          opacity: 0.8;
+        }
+        50% {
+          background-color: yellow;
+          opacity: 0.6;
+        }
+        75% {
+          background-color: green;
+          opacity: 0.4;
+        }
+        100% {
+          background-color: blue;
+          opacity: 0.2;
+        }
+      }
+      /* 2 */
+      input[type="email"] {
+        background-color: black;
+      }
+      input[type="email"]:hover {
+        background-color: #e0e0ff;
+        color: #000;
+      }
+      /* 3 */
+      .circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 10px solid blue;
+        border-bottom: 10px solid transparent;
+        animation-name: loading;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+      @keyframes loading {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(-180deg);
+        }
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+      /* 4 */
+      ul {
+        padding: 0;
+        list-style: none;
+        counter-reset: section;
+      }
+      li::before {
+        counter-increment: section;
+        content: counter(section) ") ";
+      }
+      /* 5 */
+      .element {
+        width: 100px;
+        height: 100px;
+        background-color: lightpink;
+        position: relative;
+      }
+      .element::after {
+        content: "blablabla";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <br /><br />
+
+    <input type="email" id="email" placeholder="Enter your email" />
+    <br /><br />
+
+    <div class="circle"></div>
+    <br /><br />
+
+    <ul class="counter">
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+      <li>four</li>
+    </ul>
+    <br /><br />
+
+    <div class="element">blabla</div>
+    <br />
+  </body>
+</html>

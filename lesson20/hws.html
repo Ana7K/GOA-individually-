@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // hw1
+    const myFunc = (...numbers) => {
+      let sum = 0;
+      for (i of numbers) {
+        sum += i;
+      }
+      return sum;
+    };
+    console.log(myFunc(3, 5, 8, 2, 5));
+
+    console.log("----------------------");
+
+    // hw2
+    const carModel = {
+      brand: "toyota",
+      year: 2019,
+    };
+    const carStyle = {
+      color: "Black",
+      fuel: "petrol",
+    };
+    const carInfo = { ...carModel, ...carStyle };
+    console.table(carInfo);
+
+    console.log("----------------------");
+
+    // hw3
+    array1 = [1, 2, 3, 4, 5, 6, 7];
+    let [, , num3, num4, , ,] = array1;
+    console.log(`third element: ${num3}, fourth element: ${num4}`);
+
+    console.log("----------------------");
+
+    // hw4
+    class Human {
+      constructor(name) {
+        this.name = name;
+      }
+    }
+    class Car extends Human {
+      constructor(brand, year) {
+        this.brand = brand;
+        this.year = year;
+      }
+      driven() {
+        return `This car is driven by ${this.name}`;
+      }
+    }
+    // const myCar = new Car("Ana", "Toyota", 2022);
+    // console.log(myCar.driven());
+
+    console.log("----------------------");
+
+    // hw5
+    class human {
+      constructor(name) {
+        this.name = name;
+      }
+      get nameFunc() {
+        return `user name: ${this.name}`;
+      }
+    }
+    const person = new human("Ana");
+    console.log(person.nameFunc);
+  </script>
+</html>

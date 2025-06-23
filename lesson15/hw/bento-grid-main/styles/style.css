@@ -1,0 +1,60 @@
+:root{
+--Purple-100: hsl(254, 88%, 90%);
+--Purple-500: hsl(256, 67%, 59%);
+--Yellow-100: hsl(31, 66%, 93%);
+--Yellow-500: hsl(39, 100%, 71%);
+--White: hsl(0, 0%, 100%);
+--Black: hsl(0, 0%, 7%);
+}
+body{
+    font-family: DM Sans;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: var(--White);
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+}
+img{
+    max-width: 100%;
+}
+.mainGrid{
+    display: grid;
+}
+.mainGrid :nth-child{
+    border-radius: 10px ;
+}
+.mainGrid div:nth-child(1){
+    background-color: var(--Yellow-100);
+}
+.mainGrid div:nth-child(2){
+    background-color: var(--Yellow-500);
+}
+.mainGrid div:nth-child(3){
+    background-color: var(--Purple-500);
+}
+.mainGrid .item4{
+    background-color: var(--Purple-100);
+}
+.mainGrid .item5{
+    background-color: var(--White);
+}
+.mainGrid .item6{
+    background-color: var(--Yellow-500);
+}
+.mainGrid .item7{
+    background-color: var(--White);
+}
+.mainGrid .item8{
+    background-color: var(--Purple-500);
+}
+.main{
+    background-color: white;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center
+}
+.mainGrid{
+    grid-template-columns: repeat(2, 1fr);
+}
