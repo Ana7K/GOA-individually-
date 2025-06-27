@@ -34,32 +34,56 @@
     </style>
   </head>
   <body>
-    <header><h1>Desserts</h1></header>
-    <div class="content">
+    <header class="container"><h1>Desserts</h1></header>
+    <div class="container main-container">
       <main>
-        <!-- one element -->
+        <!--<button class="btn-skeleton btn-skeleton-counter">
+          <div>
+            <img
+              src="./assets/images/icon-decrement-quantity.svg"
+              alt="cart decrement"
+            />
+          </div>
+          <span>Add to Cart</span>
+          <div>
+            <img
+              src="./assets/images/icon-increment-quantity.svg"
+              alt="cart increment"
+            />
+          </div>
+        </button>
         <div class="skeleton-item">
-          <!-- button and img -->
           <div class="item-img-button-container">
-            <div class="img-skeleton">
+            <div class="img-skeleton img-skeleton-border">
               <img
                 src="./assets/images/image-waffle-desktop.jpg"
                 alt="Waffle"
               />
             </div>
             <button class="btn-skeleton">
-              <!-- icon of button -->
               <img src="./assets/images/icon-add-to-cart.svg" alt="cart" />
-              <!-- <div></div> -->
-              <!-- text of button -->
+            </button>
+            <button class="btn-skeleton btn-skeleton-counter">
+              <div>
+                <img
+                  src="./assets/images/icon-decrement-quantity.svg"
+                  alt="cart decrement"
+                />
+              </div>
               <p>Add to Cart</p>
+              <div>
+                <img
+                  src="./assets/images/icon-increment-quantity.svg"
+                  alt="cart increment"
+                />
+              </div>
             </button>
           </div>
           <span class="small-text">Waffle</span>
           <h2 class="product-name">Waffle with Berries</h2>
           <span class="price">$6.50</span>
         </div>
-
+<!-- 
         <div class="skeleton-item">
           <div class="item-img-button-container">
             <div class="img-skeleton">
@@ -196,7 +220,7 @@
           <span class="small-text">Panna Cotta</span>
           <h2 class="product-name">Vanilla Panna Cotta</h2>
           <span class="price">$6.50</span>
-        </div>
+        </div>-->
       </main>
 
       <aside>
@@ -221,4 +245,5 @@
       </div>
     </footer>
   </body>
+  <script src="./app.js"></script>
 </html>

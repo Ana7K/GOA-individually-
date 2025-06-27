@@ -1,0 +1,132 @@
+/*root*/
+:root {
+--lime: hsl(61, 70%, 52%);
+--red: hsl(4, 69%, 50%);
+--white: hsl(0, 0%, 100%);
+--slate-100: hsl(202, 86%, 94%);
+--slate-300: hsl(203, 41%, 72%);
+--slate-500: hsl(200, 26%, 54%);
+--slate-700: hsl(200, 24%, 40%);
+--slate-900: hsl(202, 55%, 16%);
+
+}
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: var(--slate-100);
+    color: var(--slate-900);
+    padding: 40px;
+}
+.container{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: var(--white);
+    gap: 20px;
+}
+h2, .loan-type button{
+    font-weight: 700;
+}
+h2{
+    font-size: 20px;
+}
+span{
+    font-size: 12px;
+}
+.loan-container span, .horizontal span{
+    background-color: var(--slate-100);
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header button {
+    background: none;
+    border: none;
+    color: var(--slate-700);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.loan-container, .loan-type{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.horizontal{
+    display: flex;
+    gap: 10px;
+}
+input, .radio-btn input{
+    border: 1px solid var(--slate-500);
+    border-radius: 3px;
+}
+.radio-btn {
+    border: 1px solid var(--slate-300);
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.radio-btn::after checked{
+    background-color: var(--lime);
+}
+
+.calculate-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--lime);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.right{
+    background-color: var(--slate-900);
+    border-radius: 0 20px 20px 50px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 20px;
+}
+.right img {
+  max-width: 100%;
+  height: auto;
+}
+.right span{
+    color: var(--slate-300);
+}
+
+@media screen and (max-width: 375px) {
+  .container, .horizontal, .right {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .right {
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .right img {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+ @media screen and (max-width: 1440px) {
+  
+}
