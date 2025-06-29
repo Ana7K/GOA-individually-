@@ -20,7 +20,6 @@ body{
 }
 .container{
     max-width: 1000px;
-    width: 100%;
     margin: 0 auto;
     display: flex;
     border-radius: 10px;
@@ -110,7 +109,7 @@ input, .radio-btn input{
     color: var(--slate-300);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 768px) {
   .container, .horizontal, .right {
     flex-direction: column;
     justify-content: center;
