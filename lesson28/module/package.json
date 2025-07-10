@@ -1,0 +1,21 @@
+{
+  "name": "goa",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000G\u0000O\u0000A\u0000-\u0000i\u0000n\u0000d\u0000i\u0000v\u0000i\u0000d\u0000u\u0000a\u0000l\u0000l\u0000y\u0000-\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ana7K/GOA-individually-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ana7K/GOA-individually-/issues"
+  },
+  "homepage": "https://github.com/Ana7K/GOA-individually-#readme"
+}

@@ -100,9 +100,8 @@ const data = [
   },
 ];
 const main = document.querySelector("main");
-
-
-
+let addToCardArray = {
+}
 let width = window.innerWidth;
 let height = window.innerHeight;
 function reportWindowSize() {
@@ -111,8 +110,7 @@ function reportWindowSize() {
   console.log(width, height);
 }
 window.onresize = reportWindowSize;
-
-data.forEach((item) => {
+data.forEach(item => {
   const element = document.createElement("div");
   element.innerHTML = `
     <div class="skeleton-item">
@@ -122,11 +120,12 @@ data.forEach((item) => {
               <img
                 src="${
                   width < 778
-                    ? item.image.desktop
-                    : width < 1440
                     ? item.image.mobile
-                    : item.image.tablet
+                    : width < 1440
+                    ? item.image.tablet
+                    : item.image.desktop
                 }"
+
                 alt="${item.name}"
               />
             </div>
@@ -144,34 +143,65 @@ data.forEach((item) => {
     `;
   main.append(element);
 });
-
 const buttonDiv = document.querySelectorAll(".btn-skeleton-container");
 const imgContainer = document.querySelectorAll(".img-skeleton");
 console.log(buttonDiv);
-buttonDiv.forEach((button, index) => {
-  button.onclick = () => {
-    console.log(data[index]);
-    console.log(imgContainer[index]);
-    imgContainer[index].classList.add("img-skeleton-border");
-  button.innerHTML = `
-  
-    <button class="btn-skeleton btn-skeleton-counter">
-          <div>
-            <img
-              src="./assets/images/icon-decrement-quantity.svg"
-              alt="cart decrement"
-            />
-          </div>
-          <span>1</span>
-          <div>
-            <img
-              src="./assets/images/icon-increment-quantity.svg"
-              alt="cart increment"
-            />
-          </div>
-        </button>
-    `;
-  };
-});
 
+buttonDiv.forEach((button, index) => {
+  const Counter = () => {
+    let quantity = 1;
+  // console.log(data[index]);
+  // console.log(imgContainer[index]);
+
+  //red border
+  imgContainer[index].classList.add("img-skeleton-border");
+
+  button.innerHTML = `
+    <button class="btn-skeleton btn-skeleton-counter">
+      <div class="decrement">
+        <img src="./assets/images/icon-decrement-quantity.svg" alt="cart decrement" />
+      </div>
+      <span>${quantity}</span>
+      <div class="increment">
+        <img src="./assets/images/icon-increment-quantity.svg" alt="cart increment" />
+      </div>
+    </button>
+  `;
+
+  const decrement = button.querySelector(".decrement");
+  const increment = button.querySelector(".increment");
+  const counter = button.querySelector("span");
+
+
+  increment.addEventListener("click", () => {
+      quantity++;
+      counter.textContent = quantity;
+    });
+
+
+  decrement.onclick = () => {
+    if (quantity > 1) {
+      quantity--;
+      counter.textContent = quantity;
+    } else {
+      // removing red border
+      imgContainer[index].classList.remove("img-skeleton-border");
+
+      button.innerHTML = `
+        <button class="btn-skeleton">
+          <img src="./assets/images/icon-add-to-cart.svg" alt="cart" />
+          <p>Add to Cart</p>
+        </button>
+      `;
+        const newBtn = button.querySelector("button");
+        newBtn.onclick = () => {
+          Counter();
+        };
+    }
+  };
+};
+
+  button.querySelector("button").addEventListener("click", Counter);
+
+});
 // console.log(`${item.image} ${item.category} ${item.name} ${item.price}`);

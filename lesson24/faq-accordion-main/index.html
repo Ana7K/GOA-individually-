@@ -27,90 +27,87 @@
     </style>
   </head>
 
-  <body
-    class="min-h-screen relative flex flex-col items-center justify-center text-base"
-  >
-      <img
-        src="./assets/images/background-pattern-desktop.svg"
-        alt="background"
-        class="fixed top-0 left-0 w-full h-full -z-10 object-cover"
-      />
+  <body class="min-h-screen text-base bg-purple-200">
+    <img
+      src="./assets/images/background-pattern-desktop.svg"
+      alt="background"
+      class="relative top-0 left-0 w-full -z-10 object-cover"
+    />
 
-    <div class="absolute bottom-0 left-0 w-full bg-purple-200">
-      <div
-        class="mt-[-100px] bg-white rounded-xl shadow-xl max-w-xl mx-auto w-full p-8"
-      >
-        <div class="pb-5 flex gap-5">
-          <img src="./assets/images/icon-star.svg" alt="" />
-          <h1 class="font-bold text-purple-950 text-5xl text-left">FAQs</h1>
-        </div>
+    <div
+      class="mt-[-100px] bg-white rounded-xl shadow-xl max-w-xl mx-auto w-full p-8"
+    >
+      <div class="pb-5 flex gap-5">
+        <img src="./assets/images/icon-star.svg" alt="" />
+        <h1 class="font-bold text-purple-950 text-5xl text-left">FAQs</h1>
+      </div>
 
-        <div class="mb-5">
-          <div class="flex justify-between">
-            <h2 class="text-purple-950 font-bold text-lg">
-              What is Frontend Mentor, and how will it help me?
-            </h2>
-            <button class="toggle-btn cursor-pointer">
-              <img src="./assets/images/icon-plus.svg" alt="plus" />
-            </button>
-          </div>
-          <p class="text-sm">
-            Frontend Mentor offers realistic coding challenges to help
-            developers improve their frontend coding skills with projects in
-            HTML, CSS, and JavaScript. It's suitable for all levels and ideal
-            for portfolio building.
-          </p>
+      <div class="mb-5">
+        <div class="flex justify-between">
+          <h2 class="text-purple-950 font-bold text-lg">
+            What is Frontend Mentor, and how will it help me?
+          </h2>
+          <button class="toggle-btn cursor-pointer">
+            <img src="./assets/images/icon-plus.svg" alt="plus" />
+          </button>
         </div>
+        <p data-text="true" class="data-[text=true]:hidden text-sm">
+          Frontend Mentor offers realistic coding challenges to help developers
+          improve their frontend coding skills with projects in HTML, CSS, and
+          JavaScript. It's suitable for all levels and ideal for portfolio
+          building.
+        </p>
+      </div>
 
-        <div class="mb-5">
-          <div class="flex place-content-between">
-            <h2 class="text-purple-950 font-bold text-lg">
-              Is Frontend Mentor free?
-            </h2>
-            <button class="toggle-btn cursor-pointer">
-              <img src="./assets/images/icon-plus.svg" alt="plus" />
-            </button>
-          </div>
-          <p class="text-sm">
-            Yes, Frontend Mentor offers both free and premium coding challenges,
-            with the free option providing access to a range of projects
-            suitable for all skill levels.
-          </p>
+      <div class="mb-5">
+        <div class="flex place-content-between">
+          <h2 class="text-purple-950 font-bold text-lg">
+            Is Frontend Mentor free?
+          </h2>
+          <button class="toggle-btn cursor-pointer">
+            <img src="./assets/images/icon-plus.svg" alt="plus" />
+          </button>
         </div>
+        <p data-text="true" class="data-[text=true]:hidden text-sm">
+          Yes, Frontend Mentor offers both free and premium coding challenges,
+          with the free option providing access to a range of projects suitable
+          for all skill levels.
+        </p>
+      </div>
 
-        <div class="mb-5">
-          <div class="flex place-content-between">
-            <h2 class="text-purple-950 font-bold text-lg">
-              Can I use Frontend Mentor projects in my portfolio?
-            </h2>
-            <button class="toggle-btn cursor-pointer">
-              <img src="./assets/images/icon-plus.svg" alt="plus" />
-            </button>
-          </div>
-          <p class="text-sm">
-            Yes, you can use projects completed on Frontend Mentor in your
-            portfolio. It's an excellent way to showcase your skills to
-            potential employers!
-          </p>
+      <div class="mb-5">
+        <div class="flex place-content-between">
+          <h2 class="text-purple-950 font-bold text-lg">
+            Can I use Frontend Mentor projects in my portfolio?
+          </h2>
+          <button class="toggle-btn cursor-pointer">
+            <img src="./assets/images/icon-plus.svg" alt="plus" />
+          </button>
         </div>
+        <p data-text="true" class="data-[text=true]:hidden text-sm">
+          Yes, you can use projects completed on Frontend Mentor in your
+          portfolio. It's an excellent way to showcase your skills to potential
+          employers!
+        </p>
+      </div>
 
-        <div>
-          <div class="flex place-content-between">
-            <h2 class="text-purple-950 font-bold text-lg">
-              How can I get help if I'm stuck on a Frontend Mentor challenge?
-            </h2>
-            <button class="toggle-btn cursor-pointer">
-              <img src="./assets/images/icon-plus.svg" alt="plus" />
-            </button>
-          </div>
-          <p class="text-sm">
-            The best place to get help is inside Frontend Mentor's Discord
-            community. There's a help channel where you can ask questions and
-            seek support from other community members.
-          </p>
+      <div>
+        <div class="flex place-content-between">
+          <h2 class="text-purple-950 font-bold text-lg">
+            How can I get help if I'm stuck on a Frontend Mentor challenge?
+          </h2>
+          <button class="toggle-btn cursor-pointer">
+            <img src="./assets/images/icon-plus.svg" alt="plus" />
+          </button>
         </div>
+        <p data-text="true" class="data-[text=true]:hidden text-sm">
+          The best place to get help is inside Frontend Mentor's Discord
+          community. There's a help channel where you can ask questions and seek
+          support from other community members.
+        </p>
       </div>
     </div>
+
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
@@ -131,5 +128,9 @@
         }
       });
     });
+
+    function handleClick() {
+      const text = document.getElementById("text-1");
+    }
   </script>
 </html>

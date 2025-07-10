@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  
+  <body
+    class="min-h-screen text-base bg-[#39384d] p-4 flex items-center justify-center"
+  >
+    <div
+      class="bg-white rounded-2xl flex justify-center gap-5 p-6 container max-w-4xl flex-col md:flex-row"
+    >
+      <div class="p-10 flex flex-col gap-5">
+        <h1 class="font-bold text-[#2a2643] mb-4 text-5xl">
+          Stay updated!
+        </h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul class="list-none flex flex-col gap-3">
+          <li class="flex gap-2">
+            <img src="./assets/images/icon-list.svg" alt="icon-list" />
+            Product discovery and building what matters
+          </li>
+          <li class="flex gap-2">
+            <img src="./assets/images/icon-list.svg" alt="icon-list" />
+            Measuring to ensure updates are a success
+          </li>
+          <li class="flex gap-2">
+            <img src="./assets/images/icon-list.svg" alt="icon-list" />
+            And much more!
+          </li>
+        </ul>
+
+        <form>
+          <label for="email" class="font-bold">Email address</label><br />
+          <input
+            class="w-full p-3 border border-[#7f7f7e] rounded-lg"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="email@company.com"
+          /><br /><br />
+          <button
+            type="submit"
+            class="text-white bg-[#282742] rounded-lg w-full py-5"
+          >
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </div>
+      <img
+        class="max-w-full h-auto"
+        src="./assets/images/illustration-sign-up-desktop.svg"
+        alt="illustration"
+      />
+    </div>
+  </body>
+</html>

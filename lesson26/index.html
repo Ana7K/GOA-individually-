@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let map = new Map([
+        ["k1", "v1"],
+        ["k2", "v2"],
+        ["k3", "v3"],
+        ["k4", "v4"],
+        ["k5", "v5"],
+      ]);
+      console.log(map.values());
+      map.get("k1"); //v1
+      map.has("k2");
+
+      //   map.keys();
+      //   map.values();
+      //   map.clear();
+
+      map.size;
+      map.set("lomi", "vefxvi");
+      console.log(map);
+      for (let i of map.keys()) {
+        console.log(map.get(i));
+      }
+
+      let set = new Set([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
+      console.log(set);
+    </script>
+  </body>
+</html>

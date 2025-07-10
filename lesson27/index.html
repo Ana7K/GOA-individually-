@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const cityName = "tbilisi";
+      const API_key = "";
+      const api = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_key}`;
+      console.log(api);
+      const fakeData = {
+        coord: {
+          lon: 44.8337,
+          lat: 41.6941,
+        },
+        weather: [
+          {
+            id: 803,
+            main: "Clouds",
+            description: "broken clouds",
+            icon: "04d",
+          },
+        ],
+          base: "stations",
+          main: {
+          temp: 291.99,
+          feels_like: 291.81,
+          temp_min: 291.99,
+          temp_max: 291.99,
+          pressure: 1015,
+          humidity: 72,
+          sea_level: 1015,
+          grnd_level: 946,
+        },
+        visibility: 10000,
+        wind: {
+          speed: 5.14,
+          deg: 290,
+        },
+        clouds: {
+          all: 75,
+        },
+        dt: 1751617254,
+        sys: {
+          type: 1,
+          id: 8862,
+          country: "GE",
+          sunrise: 1751592682,
+          sunset: 1751647105,
+        },
+        timezone: 14400,
+        id: 611717,
+        name: "Tbilisi",
+        cod: 200,
+      };
+      const myFunc = async (params) => {
+        try {
+          const data = await fetch(api)
+            .then((res) => res.json())
+            .then((res) => res)
+            .catch((err) => console.log("error"));
+          console.log(data);
+        } catch (error) {
+          console.log(err);
+        }
+      };
+    //   myFunc();
+    </script>
+  </body>
+</html>

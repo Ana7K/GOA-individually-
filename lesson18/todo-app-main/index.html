@@ -31,12 +31,12 @@
       }
     </style>
   </head>
-  <body>
+  <body class="dark-mode">
     <main class="todo-app">
       <header class="header">
         <h1>TODO</h1>
         <button onclick="myFunction()" id="dark-mode">
-          <img src="./images/icon-moon.svg" alt="dark-mode" />
+          <div alt="dark-mode" />
         </button>
       </header>
 
@@ -53,11 +53,11 @@
       </ul>
 
       <section class="todo-completion">
-        <p >0 items left</p>
-        <div class="filters">
-          <button class="filter active">All</button>
-          <button class="filter">Active</button>
-          <button class="filter">Completed</button>
+        <p>0 items left</p>
+        <div>
+          <button class="active">All</button>
+          <button>Active</button>
+          <button>Completed</button>
         </div>
         <button id="clear-completed">Clear Completed</button>
       </section>
