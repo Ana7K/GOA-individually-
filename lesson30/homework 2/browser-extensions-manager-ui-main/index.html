@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans min-h-screen flex flex-col items-center justify-center p-6">
+  <div class="rounded-lg max-w-4xl w-full p-8 shadow-lg">
+    <!-- Header -->
+    <div class="bg-gray-500 p-2 rounded-md flex justify-between items-center mb-8">
+      <div>
+        <img src="./assets/images/logo.svg" alt="extensions">
+      </div>
+
+      <!-- light mode button -->
+      <button>
+        <img src="./assets/images/icon-sun.svg" alt="sun">
+      </button>
+    </div>
+
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+      <!-- title -->
+      <h2 class="text-2xl font-bold mb-6">Extensions List</h2>
+      <!-- buttons -->
+      <div class="flex space-x-3 mb-8">
+        <button class="bg-red-600 text-white px-4 py-1 rounded-full font-semibold shadow-sm">All</button>
+        <button class="bg-gray-700 text-gray-300 px-4 py-1 rounded-full hover:bg-gray-600">Active</button>
+        <button class="bg-gray-700 text-gray-300 px-4 py-1 rounded-full hover:bg-gray-600">Inactive</button>
+      </div>
+    </div>
+
+    <!-- grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Card -->
+      <div class="bg-[#202536] rounded-lg p-5 flex flex-col justify-between">
+        <div>
+          <div class="bg-[#b0d8bf] inline-block rounded-md p-2 mb-4">
+            <img src="./assets/images/logo-devlens.svg" class="h-10 w-10"" alt="devlens">
+          </div>
+          <h3 class="text-lg font-semibold mb-1">DevLens</h3>
+          <p class="text-gray-300 text-sm">Quickly inspect page layouts and visualize element boundaries.</p>
+        </div>
+
+        <div class="mt-4 flex justify-between items-center">
+          <button class="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded-md text-sm">Remove</button>
+
+          <!-- toggle -->
+          
+        </div>
+      </div>
+
+      <!-- Repeat similar cards for other extensions -->
+      <div class="bg-[#202536] rounded-lg p-5 flex flex-col justify-between">
+        <div>
+          <div class="bg-[#97d6eb] inline-block rounded-md p-2 mb-4">
+            <img src="./assets/images/logo-style-spy.svg" class="h-10 w-10"" alt="style-spy">
+          </div>
+          <h3 class="text-lg font-semibold mb-1">StyleSpy</h3>
+          <p class="text-gray-300 text-sm">Instantly analyze and copy CSS from any webpage element.</p>
+        </div>
+
+        <div class="mt-4 flex justify-between items-center">
+          <button class="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded-md text-sm">Remove</button>
+
+          <!-- toggle -->
+          
+        </div>
+      </div>
+
+      <div class="bg-[#202536] rounded-lg p-5 flex flex-col justify-between">
+        <div>
+          <div class="bg-[#ffcfc6] inline-block rounded-md p-2 mb-4">
+            <img src="./assets/images/logo-speed-boost.svg" class="h-10 w-10" alt="speed-boost">
+          </div>
+          <h3 class="text-lg font-semibold mb-1">SpeedBoost</h3>
+          <p class="text-gray-300 text-sm">Optimizes browser resource usage to accelerate page loading.</p>
+        </div>
+
+        <div class="mt-4 flex justify-between items-center">
+          <button class="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded-md text-sm">Remove</button>
+
+          <!-- toggle -->
+          
+        </div>
+      </div>
+
+      <div class="bg-[#202536] rounded-lg p-5 flex flex-col justify-between">
+        <div>
+          <div class="bg-[#ffc5e6] inline-block rounded-md p-2 mb-4">
+            <img src="./assets/images/logo-json-wizard.svg" class="h-10 w-10" alt="wizard">
+          </div>
+          <h3 class="text-lg font-semibold mb-1">JSONWizard</h3>
+          <p class="text-gray-300 text-sm">Formats, validates, and prettifies JSON responses in-browser.</p>
+        </div>
+
+        <div class="mt-4 flex justify-between items-center">
+          <button class="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded-md text-sm">Remove</button>
+
+          <!-- toggle -->
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  
+
+  TabMaster Pro
+  Organizes browser tabs into groups and sessions.
+  Remove
+
+  ViewportBuddy
+  Simulates various screen resolutions directly within the browser.
+  Remove
+
+  Markup Notes
+  Enables annotation and notes directly onto webpages for collaborative debugging.
+  Remove
+
+  GridGuides
+  Overlay customizable grids and alignment guides on any webpage.
+  Remove
+
+  Palette Picker
+  Instantly extracts color palettes from any webpage.
+  Remove
+
+  LinkChecker
+  Scans and highlights broken links on any page.
+  Remove
+
+  DOM Snapshot
+  Capture and export DOM structures quickly.
+  Remove
+
+  ConsolePlus
+  Enhanced developer console with advanced filtering and logging.
+  Remove
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>

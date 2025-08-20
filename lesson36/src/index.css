@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+@theme{
+--color-cream-0: var(--color-cream);
+--color-green-500: var(--color-green-500);
+--color-green-700: var(--color-green-700);
+--color-black: var(--color-black);
+--color-grey: var(--color-grey);
+--color-cream: var(--color-cream);
+--color-white: var(--color-white);
+}
+:root {
+--color-green-500: hsl(158, 36%, 37%);
+--color-green-700: hsl(158, 42%, 18%);
+--color-black: hsl(212, 21%, 14%);
+--color-grey: hsl(228, 12%, 48%);
+--color-cream: hsl(30, 38%, 92%);
+--color-white: hsl(0, 0%, 100%);
+}
