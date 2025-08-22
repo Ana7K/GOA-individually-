@@ -81,6 +81,24 @@
   --color-salesYellow: var(--color-salesYellow);
   --color-salesGreen: var(--color-salesGreen);
   --color-salesPurple: var(--color-salesPurple);
+  /* line chart tool tip */
+  --color-tooltip: var(--color-tooltip); 
+  /* bar chart stashed */
+  --color-barChartStashed-green: var(--color-barChartStashed-green);
+  --color-barChartStashed-blue: var(--color-barChartStashed-blue);
+  /* bar chart stashed */
+  --color-barChart-green: var(--color-barChart-green);
+  --color-barChart-yellow: var(--color-barChart-yellow);
+  /* products ranking colors */
+  --color-ranking-blue: var(--color-ranking-blue);
+  --color-ranking-green: var(--color-ranking-green);
+  --color-ranking-purple: var(--color-ranking-purple);
+  --color-ranking-orange: var(--color-ranking-orange);
+  /* products ranking shade colors */
+  --color-ranking-blue-shade: var(--color-ranking-blue-shade);
+  --color-ranking-green-shade: var(--color-ranking-green-shade);
+  --color-ranking-purple-shade: var(--color-ranking-purple-shade);
+  --color-ranking-orange-shade: var(--color-ranking-orange-shade);
   /* shadows */
   --shadow-xs: var(--shadow-xs);
   --shadow-list: 0 20px 50px 0;
@@ -162,7 +180,24 @@
   --color-salesYellow: #FFF4DE;
   --color-salesGreen: #DCFCE7;
   --color-salesPurple: #F3E8FF;
-
+  /* line chart tool tip */
+  --color-tooltip:#F64E60;
+  /* bar chart stashed */
+  --color-barChartStashed-green:#00E096;
+  --color-barChartStashed-blue:#0095FF;
+  /* bar chart colors */
+  --color-barChart-green:#4AB58E;
+  --color-barChart-yellow:#FFCF00;
+  /* products ranking colors */
+  --color-ranking-blue: #0095FF;
+  --color-ranking-green: #00E096;
+  --color-ranking-purple: #884DFF;
+  --color-ranking-orange: #FF8F0D;
+  /* products ranking shade colors */
+  --color-ranking-blue-shade: #CDE7FF;
+  --color-ranking-green-shade: #8CFAC7;
+  --color-ranking-purple-shade: #C5A8FF;
+  --color-ranking-orange-shade: #FFD5A4;
   /* shadow colors  */
   --color-shadow-1: #ededed;
   --color-shadow-list: #374557;

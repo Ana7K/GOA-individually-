@@ -253,11 +253,11 @@ function ChartLegendContent({
   hideIcon = false,
   payload,
   verticalAlign = "bottom",
-  nameKey,
+  dataKey,
 }: React.ComponentProps<"div"> &
   Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
     hideIcon?: boolean
-    nameKey?: string
+    dataKey?: string
   }) {
   const { config } = useChart()
 
@@ -274,7 +274,7 @@ function ChartLegendContent({
       )}
     >
       {payload.map((item) => {
-        const key = `${nameKey || item.dataKey || "value"}`
+        const key = `${dataKey || item.dataKey || "value"}`
         const itemConfig = getPayloadConfigFromPayload(config, item, key)
 
         return (
@@ -288,7 +288,7 @@ function ChartLegendContent({
               <itemConfig.icon />
             ) : (
               <div
-                className="h-2 w-2 shrink-0 rounded-[2px]"
+                className="h-3 w-3 shrink-0 rounded-[2px]"
                 style={{
                   backgroundColor: item.color,
                 }}

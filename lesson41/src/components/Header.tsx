@@ -1,4 +1,4 @@
-import Input from "../components/ui/input";
+import Input from "./input";
 import { Menu } from "lucide-react";
 import type { JSX } from "react";
 

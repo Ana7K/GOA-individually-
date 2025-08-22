@@ -1,12 +1,17 @@
 "use client";
 import * as React from "react";
-import { Button } from "./shadcn/button";
-import { Alert, AlertDescription, AlertTitle } from "@/components/shadcn/alert";
+import { Button } from "./ui/button";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Terminal } from "lucide-react";
-import { Progress } from "./shadcn/progress";
-import Cards from "./ui/cards";
-import { ChartLineMultiple } from "./ui/lineChart";
-
+import { Progress } from "./ui/progress";
+import Cards from "./cards";
+import { ChartLineMultiple } from "./lineChart";
+import { ChartBarStacked } from "./stackedBarChart";
+import { ChartBarMultiple } from "./multipleBarChart";
+import { BarChartMulti } from "./multipleBarChartYellow";
+import { ChartAreaGradient } from "./areaChartGradient";
+import { ProductsProgress } from "./productsProgress";
+// import WorldMap from "./worldMap";
 
 export function ProgressDemo() {
   const [progress, setProgress] = React.useState(13);
@@ -21,38 +26,36 @@ export default function Main() {
   const alertVariant: "default" | "destructive" = "default";
   return (
     <main className="flex flex-col justify-between gap-4 m-4">
-      <div className="flex gap-4">
+      <div className="flex max-xl:flex-col gap-4">
         <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
-          <Cards/>
+          <Cards />
         </div>
-        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
-          <ChartLineMultiple/>
-        </div>
-      </div>
-
-      <div className="flex gap-4">
-        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
-          chart
-        </div>
-        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
-          chart
-        </div>
-        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
-          chart
+        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] sm:p-4 rounded-2xl">
+          <ChartLineMultiple />
         </div>
       </div>
 
-      <div className="flex gap-4">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-col-1 gap-4">
         <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
-          chart
+          <ChartBarMultiple />
         </div>
         <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
-          chart
+          <ChartAreaGradient/>
         </div>
         <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
-          chart
+          <BarChartMulti/>
+        </div>
+        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
+          <ProductsProgress/>
+        </div>
+        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
+          {/* <WorldMap/> */}
+        </div>
+        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
+          <ChartBarStacked />
         </div>
       </div>
+
       <div className="flex-center flex-col gap-4 mt-20">
         <Button className="bg-blue-700 hover:bg-blue-800">Click me</Button>
         <div>
