@@ -48,7 +48,7 @@ const data: SalesItem[] = [
   },
 ];
 
-export default function Cards({ className = "" }: SalesItemProps): JSX.Element {
+export function Cards({ className = "" }: SalesItemProps): JSX.Element {
   const [listItems] = useState<SalesItem[]>(data);
 
   return (

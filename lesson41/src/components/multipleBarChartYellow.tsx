@@ -61,17 +61,33 @@ export function BarChartMulti() {
               cursor={false}
               content={<ChartTooltipContent indicator="dashed" />}
             />
-            <Bar dataKey="RealitySales" fill="var(--color-barChart-green)" radius={4} />
-            <Bar dataKey="TargetSales" fill="var(--color-barChart-yellow)" radius={4} />
+            <Bar
+              dataKey="RealitySales"
+              fill="var(--color-barChart-green)"
+              radius={4}
+            />
+            <Bar
+              dataKey="TargetSales"
+              fill="var(--color-barChart-yellow)"
+              radius={4}
+            />
           </BarChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
+      <CardFooter className="flex-col items-start gap-2 text-xs font-semibold text-grey-900">
         <div className="flex gap-2 leading-none font-medium">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+          <img src="src/assets/icons/Avatar.svg" alt="" />
+          <div className="flex flex-col justify-between my-1">
+            <p>Reality Sales</p>
+            <p className="text-grey-700 font-normal">Global</p>
+          </div>
         </div>
-        <div className="text-muted-foreground leading-none">
-          Showing total visitors for the last 6 months
+        <div className="flex gap-2 leading-none font-medium">
+          <img src="src/assets/icons/Avatar (1).svg" alt="" />
+          <div className="flex flex-col justify-between my-1">
+            <p>Target Sales</p>
+            <p className="text-grey-700 font-normal">Commercial</p>
+          </div>
         </div>
       </CardFooter>
     </Card>

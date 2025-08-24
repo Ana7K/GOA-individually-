@@ -82,7 +82,7 @@
   --color-salesGreen: var(--color-salesGreen);
   --color-salesPurple: var(--color-salesPurple);
   /* line chart tool tip */
-  --color-tooltip: var(--color-tooltip); 
+  --color-tooltip: var(--color-tooltip);
   /* bar chart stashed */
   --color-barChartStashed-green: var(--color-barChartStashed-green);
   --color-barChartStashed-blue: var(--color-barChartStashed-blue);
@@ -176,28 +176,28 @@
   --color-warning: #efbe27;
   --color-error: #eb5757;
   /* sales bg colors */
-  --color-salesPink: #FFE2E5;
-  --color-salesYellow: #FFF4DE;
-  --color-salesGreen: #DCFCE7;
-  --color-salesPurple: #F3E8FF;
+  --color-salesPink: #ffe2e5;
+  --color-salesYellow: #fff4de;
+  --color-salesGreen: #dcfce7;
+  --color-salesPurple: #f3e8ff;
   /* line chart tool tip */
-  --color-tooltip:#F64E60;
+  --color-tooltip: #f64e60;
   /* bar chart stashed */
-  --color-barChartStashed-green:#00E096;
-  --color-barChartStashed-blue:#0095FF;
+  --color-barChartStashed-green: #00e096;
+  --color-barChartStashed-blue: #0095ff;
   /* bar chart colors */
-  --color-barChart-green:#4AB58E;
-  --color-barChart-yellow:#FFCF00;
+  --color-barChart-green: #4ab58e;
+  --color-barChart-yellow: #ffcf00;
   /* products ranking colors */
-  --color-ranking-blue: #0095FF;
-  --color-ranking-green: #00E096;
-  --color-ranking-purple: #884DFF;
-  --color-ranking-orange: #FF8F0D;
+  --color-ranking-blue: #0095ff;
+  --color-ranking-green: #00e096;
+  --color-ranking-purple: #884dff;
+  --color-ranking-orange: #ff8f0d;
   /* products ranking shade colors */
-  --color-ranking-blue-shade: #CDE7FF;
-  --color-ranking-green-shade: #8CFAC7;
-  --color-ranking-purple-shade: #C5A8FF;
-  --color-ranking-orange-shade: #FFD5A4;
+  --color-ranking-blue-shade: #cde7ff;
+  --color-ranking-green-shade: #8cfac7;
+  --color-ranking-purple-shade: #c5a8ff;
+  --color-ranking-orange-shade: #ffd5a4;
   /* shadow colors  */
   --color-shadow-1: #ededed;
   --color-shadow-list: #374557;
@@ -208,6 +208,46 @@
 
 @utility flex-center {
   @apply flex items-center justify-center;
+}
+/* Products Progress Custom Colors */
+
+.bg-color-ranking-blue {
+  background-color: var(--color-ranking-blue);
+}
+.bg-color-ranking-green {
+  background-color: var(--color-ranking-green);
+}
+.bg-color-ranking-purple {
+  background-color: var(--color-ranking-purple);
+}
+.bg-color-ranking-orange {
+  background-color: var(--color-ranking-orange);
+}
+
+/* Sales background + text color */
+.bg-color-ranking-blue-shade {
+  background-color: var(--color-ranking-blue-shade);
+  border: 1px solid var(--color-ranking-blue);
+  border-radius: 20px;
+  color: var(--color-ranking-blue);
+}
+.bg-color-ranking-green-shade {
+  background-color: var(--color-ranking-green-shade);
+  border: 1px solid var(--color-ranking-green);
+  border-radius: 20px;
+  color: var(--color-ranking-green);
+}
+.bg-color-ranking-purple-shade {
+  background-color: var(--color-ranking-purple-shade);
+  border: 1px solid var(--color-ranking-purple);
+  border-radius: 20px;
+  color: var(--color-ranking-purple);
+}
+.bg-color-ranking-orange-shade {
+  background-color: var(--color-ranking-orange-shade);
+  border: 1px solid var(--color-ranking-orange);
+  border-radius: 20px;
+  color: var(--color-ranking-orange);
 }
 
 .dark {
