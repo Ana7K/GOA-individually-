@@ -294,20 +294,6 @@ function ChartLegendContent({
                   backgroundColor: item.color,
                 }}
               />
-              // <div className="flex items-center">
-              //   <div
-              //     className="h-1 w-3 rounded-[2px]"
-              //     style={{ backgroundColor: item.color }}
-              //   />
-              //   <div
-              //     className="h-3 w-3 rounded-full"
-              //     style={{ backgroundColor: item.color }}
-              //   />
-              //   <div
-              //     className="h-1 w-3 rounded-[2px]"
-              //     style={{ backgroundColor: item.color }}
-              //   />
-              // </div>
             )}
             {itemConfig?.label}
           </div>

@@ -1,4 +1,5 @@
-import { Card, CardContent, CardTitle } from "./ui/card";
+import { cn } from "@/lib/utils";
+import { CardContent } from "./ui/card";
 import { Progress } from "./ui/progress";
 
 interface ProductsItem {
@@ -7,71 +8,90 @@ interface ProductsItem {
   popularity: number;
   sales: number;
   color: string;
-  bgColor:string;
+  bgColor: string;
 }
 
 const data: ProductsItem[] = [
-  { number: "01",
+  {
+    number: "01",
     name: "Home Decor Range",
     popularity: 70,
     sales: 45,
-    color: "bg-color-ranking-blue",
-    bgColor: "bg-color-ranking-blue-shade"
+    color:
+      "[&_[data-slot='progress-indicator']]:bg-ranking-blue bg-ranking-blue-shade",
+    bgColor: "bg-color-ranking-blue-shade",
   },
   {
     number: "02",
     name: "Disney Princess Pink Bag 18'",
     popularity: 50,
     sales: 29,
-    color: "bg-color-ranking-green",
-    bgColor: "bg-color-ranking-green-shade"
+    color:
+      "[&_[data-slot='progress-indicator']]:bg-ranking-green bg-ranking-green-shade",
+    bgColor: "bg-color-ranking-green-shade",
   },
-  { number: "03",
+  {
+    number: "03",
     name: "Bathroom Essentials",
     popularity: 30,
     sales: 18,
-    color: "bg-color-ranking-purple",
-    bgColor: "bg-color-ranking-purple-shade"
+    color:
+      "[&_[data-slot='progress-indicator']]:bg-ranking-purple bg-ranking-purple-shade",
+    bgColor: "bg-color-ranking-purple-shade",
   },
-  { number: "04",
+  {
+    number: "04",
     name: "Apple Smartwatches",
     popularity: 60,
     sales: 25,
-    color: "bg-color-ranking-orange",
-    bgColor: "bg-color-ranking-orange-shade"
+    color:
+      "[&_[data-slot='progress-indicator']]:bg-ranking-orange bg-ranking-orange-shade",
+    bgColor: "bg-color-ranking-orange-shade",
   },
 ];
 
 export function ProductsProgress() {
   return (
-    <Card className="w-100%">
-      <CardTitle className="px-6 text-xl font-semibold text-dark-blue-shade">
+    <div>
+      <span className="p-4 text-xl font-semibold text-dark-blue-shade">
         Top Products
-      </CardTitle>
+      </span>
       <CardContent>
-      <table className="w-full h-75 mt-4 text-sm font-normal text-grey-800">
-        <thead className="text-left text-[#96A5B8]">
-          <tr>
-            <th className="font-normal max-sm:hidden">#</th>
-            <th className="font-normal">Name</th>
-            <th className="font-normal">Popularity</th>
-            <th className="font-normal">Sales</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item) => (
-            <tr key={item.number} className="w-full">
-              <td className="max-sm:hidden">{item.number}</td>
-              <td className="">{item.name}</td>
-              <td className="pr-5 w-70">
-                <Progress className={`h-1 ${item.color}`} color={item.color} value={item.popularity} />
-              </td>
-              <td className={`h-6 w-12.5 ${item.bgColor}`}>{item.sales}%</td>
+        <table className="w-full h-70 mt-4 text-sm font-normal text-grey-800">
+          <thead className="text-left text-[#96A5B8]">
+            <tr className="border-b border-[#EDF2F6]">
+              <th className="font-normal max-sm:hidden">#</th>
+              <th className="font-normal sm:pl-4">Name</th>
+              <th className="font-normal sm:pl-4">Popularity</th>
+              <th className="font-normal">Sales</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.number} className="border-b border-[#EDF2F6]">
+                <td className="max-sm:hidden">{item.number}</td>
+                <td className="sm:pl-4">{item.name}</td>
+                <td className="pr-5 w-70 sm:pl-4">
+                  <Progress
+                    className={`h-1 ${item.color}`}
+                    value={item.popularity}
+                  />
+                </td>
+                <td className={cn("flex-center h-full w-12.5")}>
+                  <div
+                    className={cn(
+                      "flex-center rounded-md px-3 py-1",
+                      item.bgColor
+                    )}
+                  >
+                    <span>{item.sales}%</span>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </CardContent>
-    </Card>
+    </div>
   );
 }

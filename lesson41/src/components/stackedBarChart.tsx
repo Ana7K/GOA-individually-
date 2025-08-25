@@ -1,15 +1,4 @@
-"use client"
-
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
-
-import {
-  Card,
-  CardContent,
-//   CardDescription,
-//   CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 import {
   type ChartConfig,
   ChartContainer,
@@ -17,9 +6,9 @@ import {
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 
-export const description = "A stacked bar chart with a legend"
+export const description = "A stacked bar chart with a legend";
 
 const chartData = [
   { Volume: 186, Services: 80 },
@@ -28,7 +17,7 @@ const chartData = [
   { Volume: 73, Services: 190 },
   { Volume: 209, Services: 130 },
   { Volume: 214, Services: 140 },
-]
+];
 
 const chartConfig = {
   Volume: {
@@ -39,25 +28,24 @@ const chartConfig = {
     label: "Services",
     color: "var(--color-barChartStashed-blue)",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function ChartBarStacked() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-xl font-semibold text-dark-blue-shade">Volume vs Service Level</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <ChartContainer className="h-85 w-full" config={chartConfig}>
+    <div>
+      <span className="p-4 text-xl font-semibold text-dark-blue-shade">
+        Volume vs Service Level
+      </span>
+        <ChartContainer className="h-60 w-full" config={chartConfig}>
           <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
             <XAxis
               dataKey="none"
               tickLine={false}
               axisLine={{
-                stroke: "var(--color-grey-500)"
+                stroke: "var(--color-grey-500)",
               }}
-            //   tickFormatter={(value) => value.slice(0, 3)}
+              //   tickFormatter={(value) => value.slice(0, 3)}
             />
             <ChartTooltip content={<ChartTooltipContent hideLabel />} />
             <ChartLegend content={<ChartLegendContent />} />
@@ -76,7 +64,6 @@ export function ChartBarStacked() {
             />
           </BarChart>
         </ChartContainer>
-      </CardContent>
       {/* <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex gap-2 leading-none font-medium">
           Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
@@ -85,6 +72,6 @@ export function ChartBarStacked() {
           Showing total visitors for the last 6 months
         </div>
       </CardFooter> */}
-    </Card>
-  )
+    </div>
+  );
 }

@@ -32,7 +32,7 @@ export default function App(): JSX.Element {
 
   return (
     <div className="bg-background-color h-screen flex">
-      <Aside className={`${isAsideOpen ? "block" : "hidden"}`} />
+      <Aside onToggleAside={toggleAside} className={`${isAsideOpen ? "block" : "hidden"}`} />
       <div className="flex flex-col w-full overflow-x-auto">
         <Header onToggleAside={toggleAside} />
         <Main />

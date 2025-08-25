@@ -1,6 +1,4 @@
 import { Chart } from "react-google-charts";
-import { Card, CardContent, CardTitle } from "./ui/card";
-
 export const data = [
   ["Country", "lomi"],
   ["United states", 100],
@@ -19,30 +17,29 @@ export const options = {
 };
 export function WorldMap() {
   return (
-    <Card className="w-full">
-        <CardTitle className="px-6 text-xl font-semibold text-dark-blue-shade">
-          Sales Mapping by Country
-        </CardTitle>
-      <CardContent>
-        <Chart
-          chartEvents={[
-            {
-              eventName: "animationstart",
-              callback: ({ chartWrapper }) => {
-                const chart = chartWrapper.getChart();
-                const selection = chart.getSelection();
-                if (selection.length === 0) return;
-                const region = data[selection[0].row + 1];
-                console.log("Selected : " + region);
-              },
+    <div>
+      <span className="p-4 text-xl font-semibold text-dark-blue-shade">
+        Sales Mapping by Country
+      </span>
+      <Chart
+        className="w-full h-57 pt-6"
+        chartEvents={[
+          {
+            eventName: "animationstart",
+            callback: ({ chartWrapper }: { chartWrapper: any }) => {
+              const chart = chartWrapper.getChart();
+              const selection = chart.getSelection();
+              if (selection.length === 0) return;
+              const region = data[selection[0].row + 1];
+              console.log("Selected : " + region);
             },
-          ]}
-          chartType="GeoChart"
-          data={data}
-          options={options}
-          width={"100%"}
-        />
-      </CardContent>
-    </Card>
+          },
+        ]}
+        chartType="GeoChart"
+        data={data}
+        options={options}
+        width={"100%"}
+      />
+    </div>
   );
 }

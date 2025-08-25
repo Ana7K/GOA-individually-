@@ -25,33 +25,33 @@ export function ProgressDemo() {
 export default function Main() {
   // const alertVariant: "default" | "destructive" = "default";
   return (
-    <main className="flex flex-col justify-between gap-4 m-4">
+    <main className="flex flex-col justify-between gap-4 m-4 container mx-auto">
       <div className="flex max-xl:flex-col gap-4">
-        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
+        <div className="bg-grey-100 w-full h-87 shadow-sm shadow-shadow-1/[50.2%] sm:p-4 rounded-2xl">
           <Cards />
         </div>
-        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] sm:p-4 rounded-2xl">
+        <div className="bg-grey-100 w-full h-87 shadow-sm shadow-shadow-1/[50.2%] sm:p-4 rounded-2xl">
           <ChartLineMultiple />
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
+        <div className="md:col-span-2 bg-grey-100 w-full h-88 shadow-sm shadow-shadow-1/[50.2%] sm:p-4 rounded-2xl">
           <ChartBarMultiple />
         </div>
-        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
+        <div className="bg-grey-100 w-full h-88 shadow-sm shadow-shadow-1/[50.2%] sm:p-4 rounded-2xl">
           <ChartAreaGradient />
         </div>
-        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
+        <div className="bg-grey-100 w-full h-88 shadow-sm shadow-shadow-1/[50.2%] sm:p-4 rounded-2xl">
           <BarChartMulti />
         </div>
-        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
+        <div className="md:col-span-2 bg-grey-100 w-full h-88 shadow-sm shadow-shadow-1/[50.2%] sm:p-4 rounded-2xl">
           <ProductsProgress />
         </div>
-        <div className="flex-center bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
+        <div className="bg-grey-100 w-full h-88 shadow-sm shadow-shadow-1/[50.2%] sm:p-4 rounded-2xl">
           <WorldMap />
         </div>
-        <div className="bg-grey-100 w-full shadow-sm shadow-shadow-1/[50.2%] p-4 rounded-2xl">
+        <div className="bg-grey-100 w-full h-88 shadow-sm shadow-shadow-1/[50.2%] sm:p-4 rounded-2xl">
           <ChartBarStacked />
         </div>
       </div>

@@ -1,12 +1,11 @@
-import { TrendingUp } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 
 import {
-  Card,
-  CardContent,
+  // Card,
+  // CardContent,
   CardFooter,
-  CardHeader,
-  CardTitle,
+  // CardHeader,
+  // CardTitle,
 } from "@/components/ui/card";
 import {
   type ChartConfig,
@@ -40,41 +39,37 @@ const chartConfig = {
 
 export function BarChartMulti() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-xl font-semibold text-dark-blue-shade">
-          Target vs Reality
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <ChartContainer className="w-full h-70" config={chartConfig}>
-          <BarChart accessibilityLayer data={chartData}>
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="month"
-              tickLine={false}
-              tickMargin={10}
-              axisLine={false}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent indicator="dashed" />}
-            />
-            <Bar
-              dataKey="RealitySales"
-              fill="var(--color-barChart-green)"
-              radius={4}
-            />
-            <Bar
-              dataKey="TargetSales"
-              fill="var(--color-barChart-yellow)"
-              radius={4}
-            />
-          </BarChart>
-        </ChartContainer>
-      </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-xs font-semibold text-grey-900">
+    <div>
+      <span className="p-4 text-xl font-semibold text-dark-blue-shade">
+        Target vs Reality
+      </span>
+      <ChartContainer className="pt-6 w-full h-40" config={chartConfig}>
+        <BarChart accessibilityLayer data={chartData}>
+          <CartesianGrid vertical={false} />
+          <XAxis
+            dataKey="month"
+            tickLine={false}
+            tickMargin={10}
+            axisLine={false}
+            tickFormatter={(value) => value.slice(0, 3)}
+          />
+          <ChartTooltip
+            cursor={false}
+            content={<ChartTooltipContent indicator="dashed" />}
+          />
+          <Bar
+            dataKey="RealitySales"
+            fill="var(--color-barChart-green)"
+            radius={4}
+          />
+          <Bar
+            dataKey="TargetSales"
+            fill="var(--color-barChart-yellow)"
+            radius={4}
+          />
+        </BarChart>
+      </ChartContainer>
+      <CardFooter className="pt-5 flex-col items-start gap-2 text-xs font-semibold text-grey-900">
         <div className="flex gap-2 leading-none font-medium">
           <img src="src/assets/icons/Avatar.svg" alt="" />
           <div className="flex flex-col justify-between my-1">
@@ -90,6 +85,6 @@ export function BarChartMulti() {
           </div>
         </div>
       </CardFooter>
-    </Card>
+    </div>
   );
 }

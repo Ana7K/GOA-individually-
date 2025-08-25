@@ -7,6 +7,7 @@ import SalesReportIcon from "../assets/icons/Chart_Line";
 import MessagesIcon from "../assets/icons/mdi_message-processing-outline";
 import SettingsIcon from "../assets/icons/mdi_cog-outline";
 import SignOutIcon from "../assets/icons/Group 923";
+import { Menu } from "lucide-react";
 
 // Define type for menu items
 interface MenuItem {
@@ -19,6 +20,7 @@ interface MenuItem {
 
 interface AsideProps {
   className?: string;
+  onToggleAside?: any;
 }
 
 const data: MenuItem[] = [
@@ -32,7 +34,7 @@ const data: MenuItem[] = [
   { img: SignOutIcon, title: "SignOut", isSelect: false, path: "/signout" },
 ];
 
-export default function Aside({ className = "" }: AsideProps): JSX.Element {
+export default function Aside({ className, onToggleAside }: AsideProps): JSX.Element {
   const [listItems, setListItems] = useState<MenuItem[]>(data);
 
   const handleClick = (index: number): void => {
@@ -45,16 +47,17 @@ export default function Aside({ className = "" }: AsideProps): JSX.Element {
 
   return (
     <aside
-      className={`p-4 bg-grey-100 overflow-y-auto w-full sm:w-auto transform transition-transform duration-300 ${className}`}
+      className={`sm:relative absolute z-999 p-4 m-2 bg-grey-100 overflow-y-auto w-full sm:w-auto transform transition-transform duration-300 ${className}`}
     >
       {/* Logo */}
-      <div className="flex gap-4 items-center w-max">
+      <div className="flex gap-4 items-center max-w-full">
         <img
           src="src/assets/images/dummy logo.png"
           alt="logo"
-          className="size-14"
+          className="lg:size-14 size-9"
         />
-        <p className="text-3xl font-semibold text-grey-900">Dabang</p>
+        <p className="text-3xl max-sm:text-2xl font-semibold text-grey-900">Dabang</p>
+        <Menu onClick={onToggleAside}/>
       </div>
 
       {/* Menu list */}
@@ -62,8 +65,8 @@ export default function Aside({ className = "" }: AsideProps): JSX.Element {
         {listItems.map((item, index) => (
           <button
             key={index}
-            onClick={() => handleClick(index)}
-            className={`flex items-center w-auto gap-4 px-6 py-3 cursor-pointer rounded-2xl transition-all duration-300
+            onClick={() =>{ handleClick(index), onToggleAside()}}
+            className={`flex items-center w-auto gap-4 px-6 py-3 max-sm:text-xs cursor-pointer rounded-2xl transition-all duration-300
               ${
                 item.isSelect
                   ? "bg-purple-900 font-semibold shadow-list shadow-shadow-list/10"
@@ -93,7 +96,7 @@ export default function Aside({ className = "" }: AsideProps): JSX.Element {
         <img
           src="src/assets/images/Background.png"
           alt="bg"
-          className="absolute max-w-full"
+          className="absolute max-w-full h-full"
         />
         <img
           src="src/assets/images/Logo.png"

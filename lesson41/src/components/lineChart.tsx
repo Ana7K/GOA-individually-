@@ -43,80 +43,83 @@ const chartConfig = {
 
 export function ChartLineMultiple() {
   return (
-    <ChartContainer className="h-80 w-full" config={chartConfig}>
-      <LineChart
-        accessibilityLayer
-        data={chartData}
-        margin={
-          {
+    <div> 
+      <span className="p-4 text-xl font-semibold text-dark-blue-shade">
+        Visitor Insights
+      </span>
+      <ChartContainer className="pt-6 h-76 w-full" config={chartConfig}>
+        <LineChart
+          accessibilityLayer
+          data={chartData}
+          margin={{
             left: 0,
             right: 20,
             top: 20,
-            bottom: 20
-          }
-        }
-      >
-        <CartesianGrid vertical={false} />
-        <XAxis
-          dataKey="month"
-          tickLine={false}
-          width={100}
-          axisLine={false}
-          tickMargin={8}
-          tickFormatter={(value) => value.slice(0, 3)}
-        />
-        <YAxis
-          dataKey="visitor1"
-          tickLine={false}
-          axisLine={false}
-          width={50}
-          tickMargin={10}
-          ticks={[0, 100, 200, 300, 400]}
-          tick={{
-            // stroke: "var(--color-grey-200)",
-            fontSize: 16,
-            fontWeight: 400,
+            bottom: 20,
           }}
-        />
-        <ChartTooltip
-          cursor={{
-            fill: "none",
-            stroke: "var(--color-tooltip)",
-            strokeDasharray: "5 3",
-            strokeWidth: 2,
-          }}
-          content={<ChartTooltipContent indicator="dashed" />}
-        />
-        <Line
-          name="Loyal Customers"
-          dataKey="visitor1"
-          type="monotone"
-          stroke="var(--color-visitor1)"
-          strokeWidth={8}
-          dot={false}
-        />
-        <Line
-          name="New Customers"
-          dataKey="visitor2"
-          type="monotone"
-          stroke="var(--color-visitor2)"
-          strokeWidth={8}
-          dot={false}
-          activeDot={{
-            r: 12,
-            fill: "var(--color-tooltip)",
-          }}
-        />
-        <Line
-          name="Unique Customers"
-          dataKey="visitor3"
-          type="monotone"
-          stroke="var(--color-visitor3)"
-          strokeWidth={8}
-          dot={false}
-        />
-        <ChartLegend content={<ChartLegendContent />} />
-      </LineChart>
-    </ChartContainer>
+        >
+          <CartesianGrid vertical={false} />
+          <XAxis
+            dataKey="month"
+            tickLine={false}
+            width={100}
+            axisLine={false}
+            tickMargin={8}
+            tickFormatter={(value) => value.slice(0, 3)}
+          />
+          <YAxis
+            dataKey="visitor1"
+            tickLine={false}
+            axisLine={false}
+            width={50}
+            tickMargin={10}
+            ticks={[0, 100, 200, 300, 400]}
+            tick={{
+              // stroke: "var(--color-grey-200)",
+              fontSize: 16,
+              fontWeight: 400,
+            }}
+          />
+          <ChartTooltip
+            cursor={{
+              fill: "none",
+              stroke: "var(--color-tooltip)",
+              strokeDasharray: "5 3",
+              strokeWidth: 2,
+            }}
+            content={<ChartTooltipContent indicator="dashed" />}
+          />
+          <Line
+            name="Loyal Customers"
+            dataKey="visitor1"
+            type="monotone"
+            stroke="var(--color-visitor1)"
+            strokeWidth={8}
+            dot={false}
+          />
+          <Line
+            name="New Customers"
+            dataKey="visitor2"
+            type="monotone"
+            stroke="var(--color-visitor2)"
+            strokeWidth={8}
+            dot={false}
+            activeDot={{
+              r: 12,
+              fill: "var(--color-tooltip)",
+            }}
+          />
+          <Line
+            name="Unique Customers"
+            dataKey="visitor3"
+            type="monotone"
+            stroke="var(--color-visitor3)"
+            strokeWidth={8}
+            dot={false}
+          />
+          <ChartLegend className="pt-10" content={<ChartLegendContent />} />
+        </LineChart>
+      </ChartContainer>
+    </div>
   );
 }

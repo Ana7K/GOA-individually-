@@ -71,6 +71,8 @@
   --color-violet-shade: var(--color-violet-shade);
   --color-pink: var(--color-pink);
   --color-pink-shade: var(--color-pink-shade);
+  --color-blue-shade: var(--color-blue-shade);
+  --color-green-shade: var(--color-green-shade);
   /* state colors */
   --color-info: var(--color-info);
   --color-success: var(--color-success);
@@ -170,6 +172,8 @@
   --color-violet-shade: #fbf1ff;
   --color-pink: #ff74c4;
   --color-pink-shade: #fff1fe;
+  --color-blue-shade: #F0F9FF;
+  --color-green-shade: #F0FDF4;
   /* state colors */
   --color-info: #2f80ed;
   --color-success: #27ae60;
@@ -198,6 +202,7 @@
   --color-ranking-green-shade: #8cfac7;
   --color-ranking-purple-shade: #c5a8ff;
   --color-ranking-orange-shade: #ffd5a4;
+
   /* shadow colors  */
   --color-shadow-1: #ededed;
   --color-shadow-list: #374557;
@@ -211,7 +216,7 @@
 }
 /* Products Progress Custom Colors */
 
-.bg-color-ranking-blue {
+/* .bg-color-ranking-blue {
   background-color: var(--color-ranking-blue);
 }
 .bg-color-ranking-green {
@@ -222,31 +227,27 @@
 }
 .bg-color-ranking-orange {
   background-color: var(--color-ranking-orange);
-}
+} */
 
 /* Sales background + text color */
 .bg-color-ranking-blue-shade {
-  background-color: var(--color-ranking-blue-shade);
+  background-color: var(--color-blue-shade);
   border: 1px solid var(--color-ranking-blue);
-  border-radius: 20px;
   color: var(--color-ranking-blue);
 }
 .bg-color-ranking-green-shade {
-  background-color: var(--color-ranking-green-shade);
+  background-color: var(--color-green-shade);
   border: 1px solid var(--color-ranking-green);
-  border-radius: 20px;
   color: var(--color-ranking-green);
 }
 .bg-color-ranking-purple-shade {
-  background-color: var(--color-ranking-purple-shade);
+  background-color: var(--color-violet-shade);
   border: 1px solid var(--color-ranking-purple);
-  border-radius: 20px;
   color: var(--color-ranking-purple);
 }
 .bg-color-ranking-orange-shade {
-  background-color: var(--color-ranking-orange-shade);
+  background-color: var(--color-yellow-shade);
   border: 1px solid var(--color-ranking-orange);
-  border-radius: 20px;
   color: var(--color-ranking-orange);
 }
 

@@ -21,7 +21,7 @@ export default function Header({ onToggleAside }: HeaderProps): JSX.Element {
       <div className="flex gap-10">
         <div className="flex gap-12">
           {/* Input UI */}
-          <div className="max-lg:hidden">
+          <div className="max-xl:hidden">
             <Input />
           </div>
 

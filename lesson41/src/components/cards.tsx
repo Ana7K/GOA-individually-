@@ -53,10 +53,10 @@ export function Cards({ className = "" }: SalesItemProps): JSX.Element {
 
   return (
     <div
-      className={`p-4 bg-grey-100 overflow-y-auto w-full sm:w-auto transform transition-transform duration-300 ${className}`}
+      className={`p-4 pt-1 bg-grey-100 h-full w-full sm:w-auto transform transition-transform duration-300 ${className}`}
     >
       {/* Header */}
-      <div className="flex-center justify-between mb-8">
+      <div className="flex-center justify-between mb-6">
         <div className="flex flex-col gap-1 w-max">
           <span className="text-xl font-semibold text-grey-900">
             Today's Sales
@@ -70,18 +70,22 @@ export function Cards({ className = "" }: SalesItemProps): JSX.Element {
       </div>
 
       {/* Sales list */}
-      <div className="flex gap-4">
-        {listItems.map((item, index) => (
-          <div
-            key={index}
-            className={`flex flex-col w-45 max-sm:w-90 p-4 gap-4 rounded-2xl ${item.bgColor}`}
-          >
-            <item.img className="w-8" />
-            <p className="text-2xl font-semibold text-grey-900">{item.title}</p>
-            <p className="text-base text-[#425166]">{item.littleTitle}</p>
-            <p className="text-xs text-light-blue-800">{item.label}</p>
-          </div>
-        ))}
+      <div className="flex gap-4 overflow-x-auto">
+        <div className="flex gap-4">
+          {listItems.map((item, index) => (
+            <div
+              key={index}
+              className={`flex flex-col max-2xl:w-full max-md:w-45 w-45 p-4 gap-4 rounded-2xl ${item.bgColor}`}
+            >
+              <item.img className="w-8" />
+              <p className="text-2xl font-semibold text-grey-900">
+                {item.title}
+              </p>
+              <p className="text-base text-[#425166]">{item.littleTitle}</p>
+              <p className="text-xs text-light-blue-800">{item.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
