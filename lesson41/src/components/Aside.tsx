@@ -52,7 +52,7 @@ export default function Aside({ className, onToggleAside }: AsideProps): JSX.Ele
       {/* Logo */}
       <div className="flex gap-4 items-center max-w-full">
         <img
-          src="src/assets/images/dummy logo.png"
+          src="/images/dummy logo.png"
           alt="logo"
           className="lg:size-14 size-9"
         />
@@ -66,7 +66,7 @@ export default function Aside({ className, onToggleAside }: AsideProps): JSX.Ele
           <button
             key={index}
             onClick={() =>{ handleClick(index), onToggleAside()}}
-            className={`flex items-center w-auto gap-4 px-6 py-3 max-sm:text-xs cursor-pointer rounded-2xl transition-all duration-300
+            className={`flex items-center gap-4 lg:px-6 px-2 py-3 max-sm:text-xs cursor-pointer rounded-2xl transition-all duration-300
               ${
                 item.isSelect
                   ? "bg-purple-900 font-semibold shadow-list shadow-shadow-list/10"
@@ -94,12 +94,12 @@ export default function Aside({ className, onToggleAside }: AsideProps): JSX.Ele
       {/* Pro version box */}
       <div className="relative flex-center flex-col gap-1 py-5">
         <img
-          src="src/assets/images/Background.png"
+          src="/images/Background.png"
           alt="bg"
           className="absolute max-w-full h-full"
         />
         <img
-          src="src/assets/images/Logo.png"
+          src="/images/Logo.png"
           alt="logo"
           className="w-fit relative z-2"
         />

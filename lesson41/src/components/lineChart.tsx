@@ -43,7 +43,7 @@ const chartConfig = {
 
 export function ChartLineMultiple() {
   return (
-    <div> 
+    <div>
       <span className="p-4 text-xl font-semibold text-dark-blue-shade">
         Visitor Insights
       </span>
@@ -117,7 +117,10 @@ export function ChartLineMultiple() {
             strokeWidth={8}
             dot={false}
           />
-          <ChartLegend className="pt-10" content={<ChartLegendContent />} />
+          <ChartLegend
+            className="pl-5 pt-10"
+            content={<ChartLegendContent />}
+          />
         </LineChart>
       </ChartContainer>
     </div>

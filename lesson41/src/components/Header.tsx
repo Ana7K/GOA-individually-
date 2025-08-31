@@ -28,7 +28,7 @@ export default function Header({ onToggleAside }: HeaderProps): JSX.Element {
           {/* Country select */}
           <div className="flex-center gap-3.5 max-md:hidden">
             <img
-              src="src/assets/images/United.svg"
+              src="/images/United.svg"
               alt="flag"
               className="size-6"
             />
@@ -46,12 +46,12 @@ export default function Header({ onToggleAside }: HeaderProps): JSX.Element {
         {/* Profile select */}
         <div className="flex-center gap-6 max-sm:gap-2">
           <img
-            src="src/assets/images/Notifications.svg"
+            src="/images/Notifications.svg"
             alt="notification"
             className="size-12 max-sm:hidden"
           />
           <img
-            src="src/assets/images/Rectangle 1393.svg"
+            src="/images/Rectangle 1393.svg"
             alt="profile"
             className="w-fit max-sm:size-10"
           />

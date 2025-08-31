@@ -75,7 +75,7 @@ export function Cards({ className = "" }: SalesItemProps): JSX.Element {
           {listItems.map((item, index) => (
             <div
               key={index}
-              className={`flex flex-col max-2xl:w-full max-md:w-45 w-45 p-4 gap-4 rounded-2xl ${item.bgColor}`}
+              className={`flex flex-col max-2xl:w-full max-lg:w-45 w-30 p-4 gap-4 rounded-2xl ${item.bgColor}`}
             >
               <item.img className="w-8" />
               <p className="text-2xl font-semibold text-grey-900">
