@@ -62,7 +62,9 @@ export default function App() {
   };
   console.log(sendData);
 
-  const handleDelete = async () => {};
+  const handleDelete = async () => {
+    
+  };
 
   return (
     <div>
