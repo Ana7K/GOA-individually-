@@ -18,7 +18,7 @@ export default function Aside() {
   const [activeStep, setActiveStep] = useState(1);
 
   return (
-    <div className="relative md:w-[290px]">
+    <div className="md:relative md:w-[290px]">
       <img
         className="max-md:hidden w-full"
         src="/images/bg-sidebar-desktop.svg"

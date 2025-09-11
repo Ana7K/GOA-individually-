@@ -12,6 +12,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import NextStep from "@/components/next-step";
+import { Link } from "react-router";
+import { useMultiStepStore } from "@/store/multi-step-form";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -26,6 +28,7 @@ const formSchema = z.object({
 });
 
 export default function PersonalInfo() {
+  const { data, setData } = useMultiStepStore();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -40,77 +43,91 @@ export default function PersonalInfo() {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+    setData({ ...data, ...values });
+    console.log();
   }
   return (
-    <div className="flex flex-col">
-      <Form {...form}>
-        <h1 className="text-blue-950 font-bold text-3xl mb-3">Personal Info</h1>
-        <p className="text-grey-500 mb-8">
-          Please provide your name, email address, and phone number.
-        </p>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-blue-950 font-medium">
-                  Name
-                </FormLabel>
-                <FormControl>
-                  <input
-                    className="border border-grey-500 rounded-lg p-3 w-full"
-                    placeholder="e.g. Stephen King"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-blue-950 font-medium">
-                  Email
-                </FormLabel>
-                <FormControl>
-                  <input
-                    className="border border-grey-500 rounded-lg p-3 w-full"
-                    placeholder="e.g. stephenking@lorem.com"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="number"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-blue-950 font-medium">
-                  Phone Number
-                </FormLabel>
-                <FormControl>
-                  <input
-                    className="border border-grey-500 rounded-lg p-3 w-full"
-                    placeholder="e.g. +1 234 567 890"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <div className="flex justify-end mt-20">
-            <NextStep />
-          </div>
-        </form>
-      </Form>
+    <div className="h-full flex flex-col justify-between">
+      <div className="h-full flex flex-col">
+        <Form {...form}>
+          <h1 className="text-blue-950 font-bold text-3xl mb-3">
+            Personal Info
+          </h1>
+          <p className="text-grey-500 mb-8">
+            Please provide your name, email address, and phone number.
+          </p>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="h-full flex flex-col justify-between">
+            <div className="space-y-8">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-blue-950 font-medium">
+                      Name
+                    </FormLabel>
+                    <FormControl>
+                      <input
+                        className="border border-grey-500 rounded-lg p-3 w-full"
+                        placeholder="e.g. Stephen King"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-blue-950 font-medium">
+                      Email
+                    </FormLabel>
+                    <FormControl>
+                      <input
+                        className="border border-grey-500 rounded-lg p-3 w-full"
+                        placeholder="e.g. stephenking@lorem.com"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="number"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-blue-950 font-medium">
+                      Phone Number
+                    </FormLabel>
+                    <FormControl>
+                      <input
+                        className="border border-grey-500 rounded-lg p-3 w-full"
+                        placeholder="e.g. +1 234 567 890"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div>
+              <div className="max-md:hidden flex justify-end">
+                <NextStep />
+              </div>
+              <div className="md:hidden p-2 fixed bottom-0 right-0 w-full flex items-center justify-between bg-white">
+                <Link to={"/plan"}></Link>
+                <NextStep />
+              </div>
+            </div>
+          </form>
+        </Form>
+      </div>
     </div>
   );
   // <div>

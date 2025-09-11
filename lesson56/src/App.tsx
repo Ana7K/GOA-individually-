@@ -33,13 +33,13 @@ export default function App() {
   //   }
   // };
   return (
-    <div className="bg-blue-200 min-h-screen m-auto flex items-center justify-center md:p-10">
-      <div className="md:bg-white rounded-xl flex gap-5 max-md:flex-col md:h-160">
+    <div className="bg-blue-100 min-h-screen md:flex items-start md:items-center justify-center md:p-10">
+      <div className="md:bg-white rounded-xl flex gap-5 max-md:flex-col">
         <div className="md:p-5">
           <Aside />
         </div>
-        <div className="m-6 md:w-100">
-          <div className="flex max-md:p-5 max-md:-mt-16 rounded-xl bg-white">
+        <div className="p-6 h-full max-md:mb-16">
+          <div className="md:h-[592px] md:w-[450px] max-md:p-5 max-md:-mt-24 rounded-xl bg-white">
             <Routes>
               <Route path="/" Component={PersonalInfo}></Route>
               <Route path="/plan" Component={SelectYourPlan}></Route>
