@@ -8,14 +8,15 @@ interface User {
     id: number;
     price: number;
     useId?: number;
-    isChecked: boolean;
   }[];
   plan: {
+    title: string;
     id: number;
     useId?: number;
     price: number;
-    isMonthly: boolean;
-  }[];
+    free: number;
+    // isMonthly: boolean;
+  };
   summary: number;
 }
 
@@ -33,21 +34,20 @@ export const useMultiStepStore = create<Store>((set) => ({
       {
         id: 0,
         price: 0,
-        isChecked: false,
       },
       {
         id: 0,
         price: 0,
-        isChecked: true,
       },
     ],
-    plan: [
-      {
-        id: 0,
-        price: 0,
-        isMonthly: true,
-      },
-    ],
+    plan: {
+      title: "",
+      id: 0,
+      price: 0,
+      free: 0,
+      // isMonthly: true,
+    },
+
     summary: 0,
   },
   setData: (data) => set({ data: data }),

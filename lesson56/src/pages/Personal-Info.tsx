@@ -12,7 +12,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import NextStep from "@/components/next-step";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useMultiStepStore } from "@/store/multi-step-form";
 
 const formSchema = z.object({
@@ -37,14 +37,14 @@ export default function PersonalInfo() {
       number: "",
     },
   });
-
+  const navigate = useNavigate();
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
     setData({ ...data, ...values });
-    console.log();
+    navigate("/plan");
   }
   return (
     <div className="h-full flex flex-col justify-between">
@@ -56,7 +56,10 @@ export default function PersonalInfo() {
           <p className="text-grey-500 mb-8">
             Please provide your name, email address, and phone number.
           </p>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="h-full flex flex-col justify-between">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="h-full flex flex-col justify-between"
+          >
             <div className="space-y-8">
               <FormField
                 control={form.control}
@@ -130,43 +133,43 @@ export default function PersonalInfo() {
       </div>
     </div>
   );
-  // <div>
-  //   <h1 className="text-blue-950 font-bold text-3xl mb-3">Personal Info</h1>
-  //   <p className="text-grey-500 mb-8">
-  //     Please provide your name, email address, and phone number.
-  //   </p>
-  //   <form className="flex flex-col gap-4">
-  //     <label className="text-blue-950 font-medium" htmlFor="name">
-  //       Name
-  //     </label>
-  //     <input
-  //       className="border border-grey-500 rounded-lg p-3"
-  //       type="text"
-  //       id="name"
-  //       placeholder="e.g. Stephen King"
-  //     />
-  //     <label className="text-blue-950 font-medium" htmlFor="email">
-  //       Email Address
-  //     </label>
-  //     <input
-  //       className="border border-grey-500 rounded-lg p-3"
-  //       type="email"
-  //       id="email"
-  //       placeholder="e.g. stephenking@lorem.com"
-  //     />
-  //     <label className="text-blue-950 font-medium" htmlFor="phone">
-  //       Phone Number
-  //     </label>
-  //     <input
-  //       className="border border-grey-500 rounded-lg p-3"
-  //       type="tel"
-  //       id="phone"
-  //       placeholder="e.g. +1 234 567 890"
-  //     />
-  //   </form>
-  //   <div className="flex justify-end mt-20">
-  //     <NextStep/>
-  //   </div>
-  // </div>
-  // );
 }
+// <div>
+//   <h1 className="text-blue-950 font-bold text-3xl mb-3">Personal Info</h1>
+//   <p className="text-grey-500 mb-8">
+//     Please provide your name, email address, and phone number.
+//   </p>
+//   <form className="flex flex-col gap-4">
+//     <label className="text-blue-950 font-medium" htmlFor="name">
+//       Name
+//     </label>
+//     <input
+//       className="border border-grey-500 rounded-lg p-3"
+//       type="text"
+//       id="name"
+//       placeholder="e.g. Stephen King"
+//     />
+//     <label className="text-blue-950 font-medium" htmlFor="email">
+//       Email Address
+//     </label>
+//     <input
+//       className="border border-grey-500 rounded-lg p-3"
+//       type="email"
+//       id="email"
+//       placeholder="e.g. stephenking@lorem.com"
+//     />
+//     <label className="text-blue-950 font-medium" htmlFor="phone">
+//       Phone Number
+//     </label>
+//     <input
+//       className="border border-grey-500 rounded-lg p-3"
+//       type="tel"
+//       id="phone"
+//       placeholder="e.g. +1 234 567 890"
+//     />
+//   </form>
+//   <div className="flex justify-end mt-20">
+//     <NextStep/>
+//   </div>
+// </div>
+// );

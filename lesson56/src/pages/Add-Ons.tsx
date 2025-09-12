@@ -1,9 +1,8 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import NextStep from "../components/next-step";
 import GoBack from "@/components/go-back";
 
-export default function AddOns() {
-  const addOnsList = [
+ const addOnsList = [
     {
       title: "Online service",
       label: "Access to multiplayer games",
@@ -20,9 +19,12 @@ export default function AddOns() {
       price: 2,
     },
   ];
+export default function AddOns() {
+  const navigate = useNavigate();
+
   return (
     <div className="h-full flex flex-col justify-between">
-      <div className="">
+      <div>
         <h1 className="text-blue-950 font-bold text-3xl mb-3">Pick add-ons</h1>
         <p className="text-grey-500 mb-8">
           Add-ons help enhance your gaming experience.
