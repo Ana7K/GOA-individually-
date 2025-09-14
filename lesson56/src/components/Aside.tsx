@@ -37,20 +37,24 @@ export default function Aside() {
             className="flex items-center gap-5 cursor-pointer max-md:flex max-md:justify-around max-md:gap-1"
             onClick={() => setActiveStep(step.id)}
           >
-            <div
-              className={`w-10 h-10 flex max-md:flex-col items-center justify-center rounded-full border border-white font-semibold transition-all duration-400
-                ${
-                  step.id === activeStep
-                    ? "bg-blue-200 text-blue-950"
-                    : "text-white"
-                }`}
-            >
-              {step.id}
-            </div>
-            <div className="flex flex-col max-md:hidden">
-              <span className="text-xs text-grey-500">STEP {step.id}</span>
-              <span className="font-bold text-white">{step.title}</span>
-            </div>
+            {({ isActive }) => (
+              <>
+                <div
+                  className={`w-10 h-10 flex max-md:flex-col items-center justify-center rounded-full border border-white font-semibold transition-all duration-400
+              ${
+                isActive
+                  ? "bg-blue-200 text-blue-950"
+                  : "text-white"
+              }`}
+                >
+                  {step.id}
+                </div>
+                <div className="flex flex-col max-md:hidden">
+                  <span className="text-xs text-grey-500">STEP {step.id}</span>
+                  <span className="font-bold text-white">{step.title}</span>
+                </div>
+              </>
+            )}
           </NavLink>
         ))}
       </div>

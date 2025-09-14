@@ -7,7 +7,7 @@ import { z } from "zod";
 
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { useMultiStepStore } from "@/store/multi-step-form";
 import { useState } from "react";
 
@@ -67,30 +67,33 @@ export default function SelectYourPlan() {
   }
 
   return (
-    <div className="h-full flex flex-col justify-between">
+    <div className="h-full flex flex-col">
       <div className="h-full flex flex-col">
-        <h1 className="text-blue-950 font-bold text-3xl mb-3">
-          Select Your Plan
-        </h1>
-        <p className="text-grey-500 mb-8">
-          You have the option of monthly or yearly billing.
-        </p>
+        <Form {...form}>
+          <h1 className="text-blue-950 font-bold text-3xl mb-3">
+            Select Your Plan
+          </h1>
+          <p className="text-grey-500 mb-8">
+            You have the option of monthly or yearly billing.
+          </p>
 
-        <div className="flex max-md:flex-col gap-5">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="h-full flex flex-col justify-between"
+          >
+            <div>
               <FormField
                 control={form.control}
                 name="plan"
                 render={({ field }) => (
-                  <FormItem className="flex">
+                  <FormItem className="flex max-md:flex-col justify-between">
                     <RadioGroup
                       onValueChange={field.onChange}
                       defaultValue={field.value}
-                      className="flex"
+                      className="w-full flex justify-between max-md:flex-col"
                     >
                       {plans.map((plan) => (
-                        <FormItem key={plan.title} className="flex relative">
+                        <FormItem key={plan.title} className="relative">
                           <FormControl
                             className="absolute peer w-full h-full top-0"
                             onClick={() => setSelectedPlan(plan.title)}
@@ -121,7 +124,7 @@ export default function SelectYourPlan() {
                                   {plan.title}
                                 </span>
                                 <span className="text-grey-500 text-md">
-                                  ${plan.yearly}/yr
+                                  ${plan.price}/yr
                                 </span>
                                 <span className="text-blue-950 text-sm">
                                   {plan.free} months free
@@ -135,22 +138,19 @@ export default function SelectYourPlan() {
                   </FormItem>
                 )}
               ></FormField>
-
-              <div>
-                <div className="max-md:hidden flex justify-between">
-                  <GoBack />
-                  <NextStep />
-                </div>
-                <div className="md:hidden fixed bottom-0 left-0 p-2 w-full flex items-center justify-between bg-white">
-                  <Link to={"/plan"}>
-                    <GoBack />
-                  </Link>
-                  <NextStep />
-                </div>
+            </div>
+            <div>
+              <div className="max-md:hidden flex justify-between">
+                <GoBack />
+                <NextStep />
               </div>
-            </form>
-          </Form>
-        </div>
+              <div className="md:hidden fixed bottom-0 left-0 p-2 w-full flex items-center justify-between bg-white">
+                <GoBack />
+                <NextStep />
+              </div>
+            </div>
+          </form>
+        </Form>
       </div>
     </div>
   );

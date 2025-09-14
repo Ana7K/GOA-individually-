@@ -47,7 +47,7 @@ export default function PersonalInfo() {
     navigate("/plan");
   }
   return (
-    <div className="h-full flex flex-col justify-between">
+    <div className="h-full flex flex-col">
       <div className="h-full flex flex-col">
         <Form {...form}>
           <h1 className="text-blue-950 font-bold text-3xl mb-3">
@@ -119,6 +119,7 @@ export default function PersonalInfo() {
                 )}
               />
             </div>
+
             <div>
               <div className="max-md:hidden flex justify-end">
                 <NextStep />
@@ -128,6 +129,7 @@ export default function PersonalInfo() {
                 <NextStep />
               </div>
             </div>
+          
           </form>
         </Form>
       </div>
