@@ -1,8 +1,10 @@
+import Hero from "./components/Hero.tsx";
+
 const App = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <main className="relative min-h-screen bg-red-500 w-screen overflow-x-hidden">
+      <Hero />
+    </main>
   );
 };
 
