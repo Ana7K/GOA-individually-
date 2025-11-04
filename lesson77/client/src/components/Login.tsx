@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent } from "react";
-import useLoginApi from "../hooks/useLoginApi";
+import loginApi from "../hooks/loginApi";
 
 export default function Login() {
   const [email, setEmail] = useState("ana@gmail.com");
@@ -28,7 +28,7 @@ export default function Login() {
         <button
           onClick={(e) => {
             e.preventDefault();
-            useLoginApi(email, password);
+            loginApi({ email, password });
           }}
           className="font-bold bg-blue-500 text-white py-2 px-8 rounded-md cursor-pointer hover:bg-blue-600 shadow-lg transition-colors duration-300"
         >

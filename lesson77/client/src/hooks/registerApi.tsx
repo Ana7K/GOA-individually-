@@ -1,26 +1,29 @@
-// import { useEffect, useState } from "react";
 const URL = "http://localhost:8000/";
-const LOGIN = URL + "login";
+const REGISTER = URL + "register";
 
-export interface loginTypes {
+export interface registerTypes {
+  name: string;
+  age: number;
   email: string;
   password: string;
 }
 
-export default function useLoginApi({ email, password }: loginTypes) {
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [isError, setIsError] = useState(false);
-  // const [isData, setIsData] = useState([]);
-
-  // isLoading, data, error
+export default function registerApi({
+  name,
+  age,
+  email,
+  password,
+}: registerTypes) {
   const getUser = async () => {
-    const res = await fetch(LOGIN, {
+    const res = await fetch(REGISTER, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       credentials: "include",
       body: JSON.stringify({
+        name: name,
+        age: Number(age),
         email: email,
         password: password,
       }),
