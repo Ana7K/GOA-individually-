@@ -1,5 +1,7 @@
 import { Navigate, Outlet } from "react-router";
+import useProfile from "../hooks/useProfile";
 
-export default function ProtectedRoute({ USER }: { USER: boolean }) {
-  return USER ? <Outlet /> : <Navigate to="/login" />;
+export default function ProtectedRoute() {
+  const { data, isError, isLoading } = useProfile();
+  return !data ? <Outlet /> : <Navigate to="/login" />;
 }

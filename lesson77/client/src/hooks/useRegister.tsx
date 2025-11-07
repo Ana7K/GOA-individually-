@@ -13,7 +13,7 @@ export default function useRegister() {
     isLoading: boolean;
     isError: null | Error;
   }>({
-    isLoading: true,
+    isLoading: false,
     isError: null,
   });
 
@@ -24,20 +24,20 @@ export default function useRegister() {
     password: string;
   } | null>(null);
 
-  try {
-    useEffect(() => {
-      // const postRegister = async () => {
-      //   console.log(userRegister);
-      //   setRegister({ ...register, isLoading: false });
-      //   console.log("user successfully registered");
-      // };
-      // postRegister();
-      const getUser = async () => {
-        setRegister({ ...register, isLoading: false });
+  useEffect(() => {
+    // const postRegister = async () => {
+    //   console.log(userRegister);
+    //   setRegister({ ...register, isLoading: false });
+    //   console.log("user successfully registered");
+    // };
+    // postRegister();
+    const getUser = async () => {
+      if (!userRegister) {
+        return;
+      }
+      try {
+        setRegister({ ...register, isLoading: true });
 
-        if (!userRegister) {
-          return;
-        }
         const res = await fetch(REGISTER, {
           method: "POST",
           headers: {
@@ -49,21 +49,23 @@ export default function useRegister() {
         if (res.status === 409) {
           setRegister({
             ...register,
+            isLoading: false,
             isError: new Error("user already registered"),
           });
         } else {
           setRegister({
             ...register,
+            isLoading: false,
             isError: null,
           });
         }
         console.log(res);
-      };
-      getUser();
-    }, [userRegister]);
-  } catch (err: any) {
-    setRegister({ ...register, isError: new Error(err) });
-    console.log(err, "error");
-  }
+      } catch (err: any) {
+        setRegister({ ...register, isLoading: false, isError: new Error(err) });
+        console.log(err, "error");
+      }
+    };
+    getUser();
+  }, [userRegister]);
   return { ...register, setUserRegister };
 }

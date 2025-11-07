@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import registerApi from "../hooks/registerApi";
+// import registerApi from "../hooks/registerApi";
 import useRegister from "../hooks/useRegister";
 import Loading from "./Loading";
 
@@ -66,12 +66,13 @@ export default function Register() {
 
         <button
           type="submit"
-          className="font-bold bg-blue-500 text-white py-2 px-8 rounded-md cursor-pointer hover:bg-blue-600 shadow-lg transition-colors duration-300"
+          className="flex items-center justify-center font-bold bg-blue-500 text-white py-2 px-8 rounded-md cursor-pointer hover:bg-blue-600 shadow-lg transition-colors duration-300 disabled:opacity-60"
         >
+          {isLoading && <Loading />}
           register
-          {!isLoading && <Loading />}
         </button>
-        {isError && <div>{isError.message}</div>}
+
+        {isError && <div className="text-red-500">{isError.message}</div>}
       </form>
     </div>
   );
