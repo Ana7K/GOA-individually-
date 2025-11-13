@@ -30,9 +30,18 @@ export default function useProfile() {
           },
           credentials: "include",
         });
+
         const data = await res.json();
-        setProfile((prev) => ({ ...prev, data: data }));
-        console.log(profile);
+        if (data.status === 401) {
+          setProfile((prev) => ({
+            ...prev,
+            isError: new Error("No token found"),
+            data: data,
+            isLoading: false,
+          }));
+        }
+        setProfile((prev) => ({ ...prev, data: data, isLoading: false }));
+        // console.log(profile);
       } catch (err: any) {
         setProfile({ ...profile, isLoading: false, isError: new Error(err) });
         console.log(err, "error");

@@ -1,0 +1,90 @@
+<mxfile host="65bd71144e">
+    <diagram id="ok8B9pX9EZ4AAhM-2u-e" name="Page-1">
+        <mxGraphModel dx="11911" dy="332" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3" target="21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="ერთჯერადად, მოაქვს და აგზავნის ინფორმაციას" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="-10720" y="382.25" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="-10545" y="370.75" width="385" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="-10545" y="490.75" width="355" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="1x&lt;br&gt;email:&amp;nbsp;&lt;span style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(103, 171, 159);&quot;&gt;userRegister.email&lt;/font&gt;&lt;/span&gt;&lt;br&gt;age:&amp;nbsp;&lt;span style=&quot;color: rgb(103, 171, 159);&quot;&gt;userRegister.age&lt;/span&gt;&lt;br&gt;password:&amp;nbsp;&lt;span style=&quot;color: rgb(103, 171, 159);&quot;&gt;userRegister.pa&lt;/span&gt;" style="whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="-10545" y="370.75" width="145" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="+1 call&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;b style=&quot;text-align: left;&quot;&gt;setUserRegsiter&lt;/b&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-10545" y="490.75" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-10085" y="267.5" width="375" height="430" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;b&gt;click&lt;/b&gt;&lt;br&gt;&lt;b style=&quot;&quot;&gt;setUserRegsiter({&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;color: rgb(103, 171, 159); text-align: center;&quot;&gt;pasword,&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(103, 171, 159); text-align: center; background-color: transparent;&quot;&gt;age,&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(103, 171, 159); text-align: center; background-color: transparent;&quot;&gt;email&lt;/span&gt;&lt;div&gt;&lt;div&gt;&lt;b style=&quot;&quot;&gt;})&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="-10050" y="402.75" width="120" height="87.25" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&amp;nbsp; {isLoading, isError,&amp;nbsp;&lt;b&gt;setUserRegsiter&lt;/b&gt;}=useRegsier()" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="-10545" y="310" width="355" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="&amp;nbsp; {isLoading, isError, &lt;b&gt;setUserRegsiter&lt;/b&gt;}=useRegsier()" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="-10085" y="327.5" width="365" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.57;entryY=0.972;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="9" target="7">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="-10060" y="440"/>
+                            <mxPoint x="-10120" y="440"/>
+                            <mxPoint x="-10120" y="590"/>
+                            <mxPoint x="-10477" y="590"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="&lt;div&gt;&lt;span style=&quot;&quot;&gt;useState(&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;{&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;eamil,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;password,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;age}&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="-10085" y="267.5" width="95" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="password &lt;font style=&quot;color: rgb(103, 171, 159);&quot;&gt;Input&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="-10085" y="520" width="375" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="age &lt;font style=&quot;color: rgb(103, 171, 159);&quot;&gt;Input&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="-10085" y="580" width="375" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="email &lt;font style=&quot;color: rgb(103, 171, 159);&quot;&gt;Input&lt;/font&gt;" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="-10085" y="640" width="375" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-9900" y="670" as="sourcePoint"/>
+                        <mxPoint x="-10060" y="289.99857142857144" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="-9590" y="670"/>
+                            <mxPoint x="-9590" y="290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="&lt;div&gt;&lt;span style=&quot;text-align: left;&quot;&gt;useState&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;text-align: left;&quot;&gt;userRegister ={&lt;/span&gt;&lt;font style=&quot;text-align: left; color: rgb(103, 171, 159);&quot;&gt;eamil&lt;/font&gt;&lt;span style=&quot;text-align: left;&quot;&gt;,&amp;nbsp;&lt;/span&gt;&lt;font style=&quot;text-align: left; color: rgb(103, 171, 159);&quot;&gt;password&lt;/font&gt;&lt;span style=&quot;text-align: left;&quot;&gt;,&amp;nbsp;&lt;/span&gt;&lt;font style=&quot;text-align: left; color: rgb(103, 171, 159);&quot;&gt;age&lt;/font&gt;&lt;span style=&quot;text-align: left;&quot;&gt;}&lt;/span&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="-10390" y="372.75" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-9845.17857142857" y="550.75" as="sourcePoint"/>
+                        <mxPoint x="-10020" y="440.75" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="7" target="18">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="-10320" y="440" as="sourcePoint"/>
+                        <mxPoint x="-10270" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="PROBLEM SOLVED!" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="-10720" y="562.25" width="120" height="57.75" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

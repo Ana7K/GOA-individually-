@@ -1,3 +1,4 @@
+import { contactItems } from "../constants";
 import Button from "./Button";
 
 type ImageClipBoxProps = {
@@ -17,35 +18,39 @@ const Contact = () => {
       <div className="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden">
         <div className="absolute -left-20 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-20 lg:w-96">
           <ImageClipBox
-            src="/img/contact-1.webp"
+            src={contactItems.imageClip1}
             clipClass="contact-clip-path-1"
           />
           <ImageClipBox
-            src="/img/contact-2.webp"
+            src={contactItems.imageClip2}
             clipClass="contact-clip-path-2 lg:translate-y-40 translate-y-60"
           />
         </div>
 
         <div className="absolute -top-40 left-20 w-60 sm:top-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80">
           <ImageClipBox
-            src="/img/swordman-partial.webp"
+            src={contactItems.imageClip3}
             clipClass="absolute md:scale-125"
           />
           <ImageClipBox
-            src="/img/swordman.webp"
+            src={contactItems.imageClip4}
             clipClass="sword-man-clip-path md:scale-125"
           />
         </div>
 
         <div className="flex flex-col items-center text-center">
           <p className="mb-10 font-general text-[10px] uppercase">
-            Join Zentry
+            {contactItems.title}
           </p>
-          <p className="special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem]">
-            Let's build the <br /> new era of <br /> gaming t<b>o</b>gether
-          </p>
+          <p
+            className="special-font mt-10 w-full font-zentry text-5xl leading-[0.9] md:text-[6rem]"
+            dangerouslySetInnerHTML={{ __html: contactItems.paragraph }}
+          ></p>
 
-          <Button title="contact us" containerClass="mt-10 cursor-pointer" />
+          <Button
+            title={contactItems.buttonTitle}
+            containerClass="mt-10 cursor-pointer"
+          />
         </div>
       </div>
     </div>

@@ -25,7 +25,7 @@ export default function loginApi({ email, password }: loginTypes) {
         password: password,
       }),
     });
-    console.log(res);
+    // console.log(res);
   };
   return getUser();
 

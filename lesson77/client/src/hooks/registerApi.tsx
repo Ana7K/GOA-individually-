@@ -28,7 +28,7 @@ export default function registerApi({
         password: password,
       }),
     });
-    console.log(res);
+    // console.log(res);
   };
   getUser();
 

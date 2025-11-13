@@ -65,7 +65,7 @@ export default function useLogin() {
         // console.log(res);
       } catch (err: any) {
         setLogin({ ...login, isLoading: false, isError: new Error(err) });
-        console.log(err, "error");
+        // console.log(err, "error");
       }
     };
     loginUser();

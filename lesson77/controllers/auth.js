@@ -1,5 +1,7 @@
 import { UserModel } from "../models/user.model.js";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
+
 export async function register(req, res) {
   try {
     const { name, age, email, password } = req.body;
@@ -28,7 +30,7 @@ export async function login(req, res) {
   try {
     const { email, password } = req.body;
     const user = await UserModel.findOne({ email: email });
-    const isMatch = password === user.password;
+    const isMatch = bcrypt.compareSync(password, user.password);
     if (!isMatch)
       return res.status(401).json({ message: "user password doesn't exist" });
     if (!user) {
@@ -64,6 +66,7 @@ export async function profile(req, res) {
 
 export async function logout(req, res) {
   try {
+    res.clearCookie("token");
     res.status(201).json({ message: "user successfully logged out" });
   } catch (e) {
     res.status(401).json({ status: 401, message: "user could not logout" });

@@ -1,20 +1,34 @@
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 // import registerApi from "../hooks/registerApi";
 import useRegister from "../hooks/useRegister";
 import Loading from "./Loading";
+import { hash } from "bcryptjs";
+import { Link } from "react-router";
 
 export default function Register() {
   const [name, setName] = useState("");
   const [age, setAge] = useState<number>(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [resultPassword, setResultPassword] = useState("");
 
   const { isError, isLoading, setUserRegister } = useRegister();
-  console.log(isLoading);
+  // console.log(isLoading);
+  useEffect(() => {
+    hash(resultPassword, 10, function (err, hash: string) {
+      // Store hash in your resultPassword DB.
+      setPassword(hash);
+    });
+  }, [resultPassword]);
+
+  console.log(resultPassword);
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    // console.log(hash);
     e.preventDefault();
     // registerApi({ name, age, email, password });
+    // setTimeout(() => {
     setUserRegister({ name, age, email, password });
+    // }, 1000);
   };
 
   return (
@@ -28,7 +42,7 @@ export default function Register() {
         </h2>
 
         <input
-          placeholder="enter your name"
+          placeholder="👤 enter your name"
           type="text"
           value={name}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -46,7 +60,7 @@ export default function Register() {
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
         <input
-          placeholder="enter an email"
+          placeholder="📧 enter an email"
           type="email"
           value={email}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -55,11 +69,11 @@ export default function Register() {
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
         <input
-          placeholder="enter password"
+          placeholder="🔒 enter password"
           type="password"
-          value={password}
+          value={resultPassword}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setPassword(e.target.value)
+            setResultPassword(e.target.value)
           }
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
@@ -73,6 +87,16 @@ export default function Register() {
         </button>
 
         {isError && <div className="text-red-500">{isError.message}</div>}
+
+        <p className="text-sm text-center text-gray-700">
+          Already have an account?{" "}
+          <Link
+            to="/login"
+            className="text-blue-600 font-semibold hover:underline"
+          >
+            Log in
+          </Link>
+        </p>
       </form>
     </div>
   );

@@ -1,73 +1,101 @@
-# React + TypeScript + Vite
+# Awards Winning Website - Zentry Gaming Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Zentry Logo](/img/logo.png)
 
-Currently, two official plugins are available:
+An award-winning gaming platform featuring stunning animations, immersive video backgrounds, and interactive elements. Built with React, TypeScript, GSAP and enhanced with rich multimedia content.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Demo
 
-## React Compiler
+🔗 **Live Preview:** [https://awards-winning-website-eight.vercel.app/]
+Take a look at the deployed demo hosted on Vercel.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🌟 Features
 
-## Expanding the ESLint configuration
+- Rich video backgrounds with dynamic transitions
+- GSAP-powered animations and interactive elements
+- Custom audio system with background ambiance
+- Responsive gallery with optimized webp images
+- Animated hero sections with synchronized media
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Prerequisites**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+   - Node.js (v16 or higher)
+   - npm or yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Installation**
+
+   ```bash
+   # Clone the repository
+   git clone https://github.com/Ana7K/Awards-Winning-Website.git
+
+   # Install dependencies
+   npm install
+
+   # Start development server
+   npm run dev
+   ```
+
+## 🛠 Project Structure
+
+```
+.
+├── src/
+│   ├── components/                 # React components
+│   │   ├── About.tsx              # About section
+│   │   ├── AnimatedTitle.tsx      # GSAP animated title
+│   │   ├── Button.tsx             # Reusable button
+│   │   ├── Contact.tsx            # Contact section
+│   │   ├── Features.tsx           # Features showcase
+│   │   ├── Footer.tsx             # Footer component
+│   │   ├── Hero.tsx              # Hero section
+│   │   ├── Navbar.tsx            # Navigation
+│   │   ├── RoundedCorners.tsx    # Design elements
+│   │   └── Story.tsx             # Story section
+│   ├── constants/                 # Content configuration
+│   │   └── index.ts              # Centralized content
+│   ├── App.tsx                   # Main application
+│   ├── index.css                 # Global styles
+│   └── main.tsx                  # Entry point
+│
+├── public/
+│   ├── audio/
+│   │   └── loop.mp3              # Background music
+│   ├── fonts/                    # Custom fonts
+│   ├── img/
+│   │   ├── about.webp           # About section image
+│   │   ├── contact-*.webp       # Contact section images
+│   │   ├── gallery-*.webp       # Gallery images
+│   │   ├── swordman.webp        # Character artwork
+│   │   └── logo.png            # Brand assets
+│   └── videos/
+│       ├── feature-*.mp4        # Feature section videos
+│       └── hero-*.mp4          # Hero section videos
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Technologies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React 18
+- TypeScript
+- Vite
+- GSAP (GreenSock Animation Platform)
+- Tailwind CSS
+- React Icons
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🏆 Awards & Recognition
+
+Recognized for:
+
+- Outstanding visual design
+- Technical innovation
+- Animation excellence
+- User experience
+
+## 📝 License
+
+This project is proprietary and all rights are reserved.
+
+## 🤝 Contributing
+
+This is a showcase project. For contribution inquiries, please contact the maintainers.

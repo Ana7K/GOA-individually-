@@ -1,11 +1,4 @@
-import { FaDiscord, FaGithub, FaTwitter, FaTwitch } from "react-icons/fa";
-
-const links = [
-  { href: "https://discord.com", icon: <FaDiscord /> },
-  { href: "https://twitter.com", icon: <FaTwitter /> },
-  { href: "https://github.com", icon: <FaGithub /> },
-  { href: "https://twitch.com", icon: <FaTwitch /> },
-];
+import { links } from "../constants";
 
 const Footer = () => {
   return (
@@ -15,15 +8,15 @@ const Footer = () => {
           &copy; Ana 2025. All rights reserved
         </p>
         <div className="flex justify-center gap-4 md:justify-start">
-          {links.map((link) => (
+          {links.map(({ href, icon: Icon }) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={href}
+              href={href}
               target="_blank"
               rel="noopener noreferrer"
               className="text-black transition-colors duration-500 ease-in-out hover:text-white"
             >
-              {link.icon}
+              {<Icon />}
             </a>
           ))}
         </div>

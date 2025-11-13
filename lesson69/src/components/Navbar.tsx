@@ -3,15 +3,14 @@ import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
-
-const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+import { navAudio, navItems, navLogo } from "../constants";
 
 const Navbar = () => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
 
-  const navContainerRef = useRef(null);
-  const audioElementRef = useRef(null);
+  const navContainerRef = useRef<HTMLDivElement>(null);
+  const audioElementRef = useRef<HTMLAudioElement>(null);
 
   const { y: currentScrollY } = useWindowScroll();
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -20,13 +19,13 @@ const Navbar = () => {
   useEffect(() => {
     if (currentScrollY === 0) {
       setIsNavVisible(true);
-      navContainerRef.current.classList.remove("floating-nav");
+      navContainerRef.current?.classList.remove("floating-nav");
     } else if (currentScrollY > lastScrollY) {
       setIsNavVisible(false);
-      navContainerRef.current.classList.add("floating-nav");
+      navContainerRef.current?.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
       setIsNavVisible(true);
-      navContainerRef.current.classList.add("floating-nav");
+      navContainerRef.current?.classList.add("floating-nav");
     }
     setLastScrollY(currentScrollY);
   }, [currentScrollY, lastScrollY]);
@@ -46,9 +45,9 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isAudioPlaying) {
-      audioElementRef.current.play();
+      audioElementRef.current?.play();
     } else {
-      audioElementRef.current.pause();
+      audioElementRef.current?.pause();
     }
   }, [isAudioPlaying]);
 
@@ -60,7 +59,7 @@ const Navbar = () => {
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
-            <img src="/img/logo.png" alt="logo" className="w-10" />
+            <img src={navLogo.src} alt={navLogo.alt} className="w-10" />
             <Button
               id="product-button"
               title="Products"
@@ -89,7 +88,7 @@ const Navbar = () => {
               <audio
                 ref={audioElementRef}
                 className="hidden"
-                src="/audio/loop.mp3"
+                src={navAudio.src}
                 loop
               />
               {[1, 2, 3, 4].map((bar) => (
