@@ -11,11 +11,18 @@ export default function useProfile() {
   const [profile, setProfile] = useState<{
     isLoading: boolean;
     isError: null | Error;
-    data: object;
+    data: {
+      user: {
+        name: string;
+        age: number;
+        email: string;
+        password: string;
+      };
+    } | null;
   }>({
     isLoading: false,
     isError: null,
-    data: {},
+    data: null,
   });
 
   useEffect(() => {
@@ -30,6 +37,12 @@ export default function useProfile() {
           },
           credentials: "include",
         });
+        // .catch(() => {
+        //   setProfile((prev) => ({
+        //     ...prev,
+        //     isError: new Error("connection refused"),
+        //   }));
+        // });
 
         const data = await res.json();
         if (data.status === 401) {
@@ -40,7 +53,7 @@ export default function useProfile() {
             isLoading: false,
           }));
         }
-        setProfile((prev) => ({ ...prev, data: data, isLoading: false }));
+        setProfile(() => ({ isError: null, data: data, isLoading: false }));
         // console.log(profile);
       } catch (err: any) {
         setProfile({ ...profile, isLoading: false, isError: new Error(err) });
