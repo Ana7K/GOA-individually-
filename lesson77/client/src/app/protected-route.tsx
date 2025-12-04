@@ -7,7 +7,7 @@ export default function ProtectedRoute() {
   if (isError) {
     return <Navigate to="/login" />;
   }
-  // console.log(isError);
+  console.log(isError);
 
   // ##################### if user is fetching data, loading before #####################
   if (isLoading) return <>...loading</>;

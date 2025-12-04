@@ -13,6 +13,7 @@ export default function useProfile() {
     isError: null | Error;
     data: {
       user: {
+        role: ["admin" | "user" | "moderator" | "developer" | "audit"];
         name: string;
         age: number;
         email: string;
@@ -53,7 +54,7 @@ export default function useProfile() {
             isLoading: false,
           }));
         }
-        setProfile(() => ({ isError: null, data: data, isLoading: false }));
+        setProfile((prev) => ({ ...prev, data: data, isLoading: false }));
         // console.log(profile);
       } catch (err: any) {
         setProfile({ ...profile, isLoading: false, isError: new Error(err) });

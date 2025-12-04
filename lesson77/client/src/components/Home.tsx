@@ -1,38 +1,36 @@
 import useProfile from "../hooks/useProfile";
 
 export default function Home() {
-  const { data } = useProfile();
-  const user = {
-    name: "a",
-    roles: ["admin", "user", "moderator", "developer", "audit"],
-  };
+  const { data, isLoading } = useProfile();
+
+  console.log(data?.user?.role);
 
   const adminRole =
-    user.roles.filter((role) => {
+    data?.user?.role?.filter((role) => {
       if (role === "admin") {
         return "admin";
       }
     }) || null;
   const userRole =
-    user.roles.filter((role) => {
+    data?.user?.role?.filter((role) => {
       if (role === "user") {
         return "user";
       }
     }) || null;
   const moderatorRole =
-    user.roles.filter((role) => {
+    data?.user?.role?.filter((role) => {
       if (role === "moderator") {
         return "moderator";
       }
     }) || null;
   const auditRole =
-    user.roles.filter((role) => {
+    data?.user?.role?.filter((role) => {
       if (role === "audit") {
         return "audit";
       }
     }) || null;
   const developerRole =
-    user.roles.filter((role) => {
+    data?.user?.role?.filter((role) => {
       if (role === "developer") {
         return "developer";
       }
@@ -64,10 +62,10 @@ export default function Home() {
       </div>
       <div className="text-center">
         <p className="text-gray-600">
-          Welcome to your profile page {data?.user.name}
+          Welcome to your profile page {data?.user?.name}
         </p>
         <div className="flex flex-col">
-          {adminRole[0] && (
+          {adminRole?.[0] && (
             <>
               <a href="#admin">admin</a>
               <a href="#user">user</a>
@@ -78,26 +76,32 @@ export default function Home() {
           )}
 
           {/* yvelas aqvs user */}
-          {!adminRole[0] &&
-            (userRole[0] ||
-              moderatorRole[0] ||
-              developerRole[0] ||
-              auditRole[0]) && (
+          {!adminRole?.[0] &&
+            (userRole?.[0] ||
+              moderatorRole?.[0] ||
+              developerRole?.[0] ||
+              auditRole?.[0]) && (
               <>
                 <a href="#user">user</a>
               </>
             )}
 
           {/* moderators da developers moderatori da developeri aqvs */}
-          {!adminRole[0] && (moderatorRole[0] || developerRole[0]) && (
+          {!adminRole?.[0] && (moderatorRole?.[0] || developerRole?.[0]) && (
             <>
               <a href="#moderator">moderator</a>
+            </>
+          )}
+
+          {/* developers developeri aqvs */}
+          {!adminRole?.[0] && developerRole?.[0] && (
+            <>
               <a href="#developer">developer</a>
             </>
           )}
 
-          {/* audits auditi aqvs */}
-          {!adminRole[0] && auditRole[0] && (
+          {/* audits da moderators auditi aqvs */}
+          {!adminRole?.[0] && (auditRole?.[0] || moderatorRole?.[0]) && (
             <>
               <a href="#audit">audit</a>
             </>

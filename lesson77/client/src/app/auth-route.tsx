@@ -16,7 +16,7 @@ export default function AuthRoute() {
   if (isLoading) return <>...loading</>;
 
   // ##################### if fetching user profile fails, navigate to login #####################
-  if (isError) return JSON.stringify(isError);
+  // if (isError) return JSON.stringify(isError);
 
   // ##################### if user doesn't exist, Outlet it :)) in our case render  << Login or Register >> #####################
   return data && <Outlet />;
